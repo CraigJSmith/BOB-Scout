@@ -58,7 +58,7 @@ public class ScoutMatch extends AppCompatActivity {
     }
 
     public void start() {
-        startTime = System.currentTimeMillis() / 1000;
+        startTime = System.currentTimeMillis();
         startButton.setText("Stop");
         enableScoutingButtons(true);
     }
@@ -75,14 +75,14 @@ public class ScoutMatch extends AppCompatActivity {
     }
 
     public void goSwitch(View v) {
-        long time = System.currentTimeMillis() / 1000 - startTime;
+        long time = System.currentTimeMillis() - startTime;
         Action a = new Action("Switch", time);
         actions.add(a);
         outputData();
     }
 
     public void goScale(View v) {
-        long time = System.currentTimeMillis() / 1000 - startTime;
+        long time = System.currentTimeMillis() - startTime;
         Action a = new Action("Scale", time);
         actions.add(a);
         outputData();
