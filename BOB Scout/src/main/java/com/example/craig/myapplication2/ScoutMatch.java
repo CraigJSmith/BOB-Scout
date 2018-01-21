@@ -16,6 +16,7 @@ public class ScoutMatch extends AppCompatActivity {
     private String data;
     private String matchNum;
     private String teamNum;
+    private boolean started;
 
     private TextView dataOutput;
     private Button switchButton;
@@ -31,6 +32,7 @@ public class ScoutMatch extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         matchNum = extras.getString("EXTRA_MATCH");
         teamNum = extras.getString("EXTRA_TEAM");
+        started = false;
 
         startTime = System.currentTimeMillis();
         actions = new ArrayList<Action>();
@@ -44,11 +46,32 @@ public class ScoutMatch extends AppCompatActivity {
         dataOutput.setMovementMethod(new ScrollingMovementMethod());
     }
 
-    public void start(View v) {
+    public void startAndStopButton(View v) {
+        started = !started;
+
+        if(started) {
+            start();
+        }
+        else {
+            stop();
+        }
+    }
+
+    public void start() {
         startTime = System.currentTimeMillis() / 1000;
-        switchButton.setEnabled(true);
-        scaleButton.setEnabled(true);
-        startButton.setEnabled(false);
+        startButton.setText("Stop");
+        enableScoutingButtons(true);
+    }
+
+    public void stop() {
+        Intent intent = new Intent(this, Submit.class);
+        startActivity(intent);
+        //save to file
+    }
+
+    public void enableScoutingButtons(boolean enabled) {
+        switchButton.setEnabled(enabled);
+        scaleButton.setEnabled(enabled);
     }
 
     public void goSwitch(View v) {
