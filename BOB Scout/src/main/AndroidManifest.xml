@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.craig.myapplication2">
+    package="com.example.craig.bobscout">
 
     <application
         android:allowBackup="true"
@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScoutSetup">
+        <activity android:name="com.example.craig.bobscout.ScoutSetup">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,14 +18,14 @@
         </activity>
 
         <activity
-            android:name=".ScoutMatch"
-            android:parentActivityName=".ScoutSetup">
+            android:name="com.example.craig.bobscout.ScoutMatch"
+            android:parentActivityName="com.example.craig.bobscout.ScoutSetup">
 
         </activity>
 
         <activity
-            android:name=".Submit"
-            android:parentActivityName=".ScoutSetup">
+            android:name="com.example.craig.bobscout.Submit"
+            android:parentActivityName="com.example.craig.bobscout.ScoutSetup">
         </activity>
 
     </application>

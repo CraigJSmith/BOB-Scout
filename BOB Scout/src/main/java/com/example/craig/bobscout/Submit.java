@@ -1,4 +1,4 @@
-package com.example.craig.myapplication2;
+package com.example.craig.bobscout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

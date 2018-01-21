@@ -1,4 +1,4 @@
-package com.example.craig.myapplication2;
+package com.example.craig.bobscout;
 
 /**
  * Created by craig on 1/21/2018.

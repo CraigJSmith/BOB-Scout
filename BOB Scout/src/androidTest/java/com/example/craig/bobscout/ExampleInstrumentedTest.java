@@ -1,4 +1,4 @@
-package com.example.craig.myapplication2;
+package com.example.craig.bobscout;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

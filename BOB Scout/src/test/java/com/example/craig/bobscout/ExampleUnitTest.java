@@ -1,4 +1,4 @@
-package com.example.craig.myapplication2;
+package com.example.craig.bobscout;
 
 import org.junit.Test;
 

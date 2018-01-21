@@ -1,22 +1,17 @@
-package com.example.craig.myapplication2;
+package com.example.craig.bobscout;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.util.ArrayList;
 
-public class ScoutMatch extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Action> actions;
     private static long startTime;
     private String data;
-    private String matchNum;
-    private String teamNum;
-    private boolean started;
 
     private TextView dataOutput;
     private Button switchButton;
@@ -26,13 +21,7 @@ public class ScoutMatch extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scout_match);
-
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
-        matchNum = extras.getString("EXTRA_MATCH");
-        teamNum = extras.getString("EXTRA_TEAM");
-        started = false;
+        setContentView(R.layout.activity_main);
 
         startTime = System.currentTimeMillis();
         actions = new ArrayList<Action>();
@@ -42,36 +31,13 @@ public class ScoutMatch extends AppCompatActivity {
         switchButton = (Button) findViewById(R.id.switchButton);
         scaleButton = (Button) findViewById(R.id.scaleButton);
         startButton = (Button) findViewById(R.id.startButton);
-
-        dataOutput.setMovementMethod(new ScrollingMovementMethod());
     }
 
-    public void startAndStopButton(View v) {
-        started = !started;
-
-        if(started) {
-            start();
-        }
-        else {
-            stop();
-        }
-    }
-
-    public void start() {
+    public void start(View v) {
         startTime = System.currentTimeMillis() / 1000;
-        startButton.setText("Stop");
-        enableScoutingButtons(true);
-    }
-
-    public void stop() {
-        Intent intent = new Intent(this, Submit.class);
-        startActivity(intent);
-        //save to file
-    }
-
-    public void enableScoutingButtons(boolean enabled) {
-        switchButton.setEnabled(enabled);
-        scaleButton.setEnabled(enabled);
+        switchButton.setEnabled(true);
+        scaleButton.setEnabled(true);
+        startButton.setEnabled(false);
     }
 
     public void goSwitch(View v) {
@@ -89,7 +55,7 @@ public class ScoutMatch extends AppCompatActivity {
     }
 
     public void outputData() {
-        data = matchNum + "," + teamNum + "\n";
+        data = "";
         for (Action a : actions) {
             data += a.getType() + ", " + a.getTime() + "\n";
         }
