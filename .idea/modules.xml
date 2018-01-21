@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BOB Scout/BOB Scout.iml" filepath="$PROJECT_DIR$/BOB Scout/BOB Scout.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MyApplication2.iml" filepath="$PROJECT_DIR$/MyApplication2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/another-app-that-isnt-scouting.iml" filepath="$PROJECT_DIR$/another-app-that-isnt-scouting.iml" />
       <module fileurl="file://C:\Users\craig\AndroidStudioProjects\MyApplication2\BOB Scout\app.iml" filepath="C:\Users\craig\AndroidStudioProjects\MyApplication2\BOB Scout\app.iml" />
     </modules>
   </component>
