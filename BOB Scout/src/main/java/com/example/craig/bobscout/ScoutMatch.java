@@ -18,10 +18,18 @@ public class ScoutMatch extends AppCompatActivity {
     private String teamNum;
     private boolean started;
 
-    private TextView dataOutput;
-    private Button switchButton;
-    private Button scaleButton;
     private Button startButton;
+    private Button cp_r;
+    private Button sw_r1;
+    private Button sw_r2;
+    private Button c_1;
+    private Button c_2;
+    private Button c_3;
+    private Button c_4;
+    private Button c_5;
+    private Button c_6;
+    private Button sc_1;
+    private Button sc_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +46,22 @@ public class ScoutMatch extends AppCompatActivity {
         actions = new ArrayList<Action>();
         data = "";
 
-        dataOutput = (TextView) findViewById(R.id.dataOutput);
-        switchButton = (Button) findViewById(R.id.switchButton);
-        scaleButton = (Button) findViewById(R.id.scaleButton);
-        startButton = (Button) findViewById(R.id.startButton);
+        cp_r = findViewById(R.id.cp_r);
 
-        dataOutput.setMovementMethod(new ScrollingMovementMethod());
+        sw_r1 = findViewById(R.id.sw_r1);
+        sw_r2 = findViewById(R.id.sw_r2);
+
+        c_1 = findViewById(R.id.c_1);
+        c_2 = findViewById(R.id.c_2);
+        c_3 = findViewById(R.id.c_3);
+        c_4 = findViewById(R.id.c_4);
+        c_5 = findViewById(R.id.c_5);
+        c_6 = findViewById(R.id.c_6);
+
+        sc_1 = findViewById(R.id.sc_1);
+        sc_2 = findViewById(R.id.sc_2);
+
+        startButton = findViewById(R.id.startButton);
     }
 
     public void startAndStopButton(View v) {
@@ -65,25 +83,24 @@ public class ScoutMatch extends AppCompatActivity {
 
     public void stop() {
         Intent intent = new Intent(this, Submit.class);
+
+        Bundle extras = new Bundle();
+        extras.putString("EXTRA_MATCH", matchNum);
+        extras.putString("EXTRA_TEAM", teamNum);
+        extras.putString("EXTRA_DATA", data);
+        intent.putExtras(extras);
+
         startActivity(intent);
-        //save to file
     }
 
     public void enableScoutingButtons(boolean enabled) {
-        switchButton.setEnabled(enabled);
-        scaleButton.setEnabled(enabled);
+        //todo
     }
 
-    public void goSwitch(View v) {
+    public void addAction(View v) {
         long time = System.currentTimeMillis() - startTime;
-        Action a = new Action("Switch", time);
-        actions.add(a);
-        outputData();
-    }
-
-    public void goScale(View v) {
-        long time = System.currentTimeMillis() - startTime;
-        Action a = new Action("Scale", time);
+        String action = v.getTag().toString();
+        Action a = new Action(action, time);
         actions.add(a);
         outputData();
     }
@@ -91,8 +108,7 @@ public class ScoutMatch extends AppCompatActivity {
     public void outputData() {
         data = matchNum + "," + teamNum + "\n";
         for (Action a : actions) {
-            data += a.getType() + ", " + a.getTime() + "\n";
+            data += a.getType() + ", " + a.getTime() +"\n";
         }
-        dataOutput.setText(data);
     }
 }

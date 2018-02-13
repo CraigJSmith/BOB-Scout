@@ -7,56 +7,172 @@
     tools:context="com.example.craig.bobscout.ScoutMatch"
     tools:layout_editor_absoluteY="81dp">
 
-    <Button
-        android:id="@+id/switchButton"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="93dp"
-        android:layout_marginLeft="16dp"
-        android:enabled="false"
-        android:onClick="goSwitch"
-        android:text="Switch"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dataOutput" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/scaleButton"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:layout_marginRight="16dp"
-        android:enabled="false"
-        android:onClick="goScale"
-        android:text="Scale"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/startButton"
-        app:layout_constraintRight_toRightOf="parent" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/startButton"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:onClick="startAndStopButton"
-        android:text="START"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+            <Button
+                android:id="@+id/c_1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="c_1"
+                android:text="c_1"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="325dp"
+                tools:layout_editor_absoluteY="82dp" />
 
-    <TextView
-        android:id="@+id/dataOutput"
-        android:layout_width="328dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
-        android:layout_marginTop="32dp"
-        android:background="@color/dataOutput"
-        android:text="TextView"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/switchButton"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/c_2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="c_2"
+                android:text="c_2"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="225dp"
+                tools:layout_editor_absoluteY="82dp" />
+
+            <Button
+                android:id="@+id/c_3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="c_3"
+                android:text="c_3"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="375dp"
+                tools:layout_editor_absoluteY="82dp" />
+
+            <Button
+                android:id="@+id/c_4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="c_4"
+                android:text="c_4"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="89dp"
+                tools:layout_editor_absoluteY="82dp" />
+
+            <Button
+                android:id="@+id/c_5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="c_5"
+                android:text="c_5"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="275dp"
+                tools:layout_editor_absoluteY="82dp" />
+
+            <Button
+                android:id="@+id/c_6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="c_6"
+                android:text="c_6"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="39dp"
+                tools:layout_editor_absoluteY="82dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/sc_1"
+                android:layout_width="85dp"
+                android:layout_height="41dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="sc_1"
+                android:text="sc_1"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="133dp"
+                tools:layout_editor_absoluteY="264dp" />
+
+            <Button
+                android:id="@+id/sc_2"
+                android:layout_width="86dp"
+                android:layout_height="41dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="sc_2"
+                android:text="sc_2"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="139dp"
+                tools:layout_editor_absoluteY="87dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/sw_r1"
+                android:layout_width="85dp"
+                android:layout_height="41dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="sw_r1"
+                android:text="sw_r1"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="264dp" />
+
+            <Button
+                android:id="@+id/sw_r2"
+                android:layout_width="86dp"
+                android:layout_height="41dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="sw_r2"
+                android:text="sw_r2"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="40dp"
+                tools:layout_editor_absoluteY="361dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="100dp"
+                android:layout_height="43dp"
+                android:onClick="startAndStopButton"
+                android:text="START"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="460dp" />
+
+            <Button
+                android:id="@+id/cp_r"
+                android:layout_width="69dp"
+                android:layout_height="93dp"
+                android:enabled="false"
+                android:onClick="addAction"
+                android:tag="cp_r"
+                android:text="cp_r"
+                android:visibility="visible"
+                tools:layout_editor_absoluteX="47dp"
+                tools:layout_editor_absoluteY="90dp" />
+        </TableRow>
+    </TableLayout>
 
 </android.support.constraint.ConstraintLayout>
