@@ -29,4 +29,10 @@ public class Submit extends AppCompatActivity {
 
         dataOutput.setText(data);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent newMatch = new Intent(this, ScoutSetup.class);
+        startActivity(newMatch);
+    }
 }

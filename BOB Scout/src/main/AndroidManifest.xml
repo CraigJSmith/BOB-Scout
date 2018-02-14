@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.craig.bobscout.ScoutSetup">
+        <activity android:name="com.example.craig.bobscout.ScoutSetup" android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,13 +19,13 @@
 
         <activity
             android:name="com.example.craig.bobscout.ScoutMatch"
-            android:parentActivityName="com.example.craig.bobscout.ScoutSetup">
+            android:parentActivityName="com.example.craig.bobscout.ScoutSetup" android:screenOrientation="landscape">
 
         </activity>
 
         <activity
             android:name="com.example.craig.bobscout.Submit"
-            android:parentActivityName="com.example.craig.bobscout.ScoutSetup">
+            android:parentActivityName="com.example.craig.bobscout.ScoutSetup" android:screenOrientation="landscape">
         </activity>
 
     </application>
