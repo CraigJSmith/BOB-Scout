@@ -40,7 +40,22 @@
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/ex_r"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/holo_red_light"
+                        android:onClick="addAction"
+                        android:tag="ex_r"
+                        android:text="Ex" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
                         android:layout_weight="1" />
 
                     <Button
@@ -66,9 +81,50 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight=".111"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"></LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_weight="1" />
+
+                            <Button
+                                android:id="@+id/cp_r"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="#ffff00"
+                                android:onClick="addAction"
+                                android:tag="cp_r" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -111,7 +167,7 @@
                         android:backgroundTint="@android:color/holo_red_light"
                         android:onClick="addAction"
                         android:tag="sw_r2"
-                        android:text="Button" />
+                        android:text="Switch" />
 
                     <Space
                         android:layout_width="match_parent"
@@ -150,8 +206,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
                         android:onClick="addAction"
-                        android:tag="c_1"
-                        android:text="Cube" />
+                        android:tag="c_1" />
 
                     <Button
                         android:id="@+id/c_2"
@@ -160,8 +215,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
                         android:onClick="addAction"
-                        android:tag="c_2"
-                        android:text="Cube" />
+                        android:tag="c_2" />
 
                     <Button
                         android:id="@+id/c_3"
@@ -170,8 +224,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
                         android:onClick="addAction"
-                        android:tag="c_3"
-                        android:text="Cube" />
+                        android:tag="c_3" />
 
                     <Button
                         android:id="@+id/c_4"
@@ -180,8 +233,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
                         android:onClick="addAction"
-                        android:tag="c_4"
-                        android:text="Cube" />
+                        android:tag="c_4" />
 
                     <Button
                         android:id="@+id/c_5"
@@ -190,8 +242,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
                         android:onClick="addAction"
-                        android:tag="c_5"
-                        android:text="Cube" />
+                        android:tag="c_5" />
 
                     <Button
                         android:id="@+id/c_6"
@@ -200,8 +251,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
                         android:onClick="addAction"
-                        android:tag="c_6"
-                        android:text="Cube" />
+                        android:tag="c_6" />
 
                     <Space
                         android:layout_width="match_parent"
@@ -242,7 +292,22 @@
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/fpickup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/roundedbutton"
+                        android:onClick="addAction"
+                        android:tag="fpickup"
+                        android:text="Pickup" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
                         android:layout_weight="1" />
 
                     <Button
@@ -250,12 +315,28 @@
                         android:layout_width="match_parent"
                         android:layout_height="10dp"
                         android:layout_weight="1"
+                        android:backgroundTint="#1aff00"
                         android:onClick="startAndStopButton"
                         android:text="Start" />
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/fdrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/roundedbutton"
+                        android:onClick="addAction"
+                        android:tag="fdrop"
+                        android:text="Drop" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
                         android:layout_weight="1" />
 
                     <Button
@@ -308,8 +389,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
                             android:onClick="addAction"
-                            android:tag="c_7"
-                            android:text="Cube" />
+                            android:tag="c_7" />
 
                         <Button
                             android:id="@+id/c_8"
@@ -318,8 +398,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
                             android:onClick="addAction"
-                            android:tag="c_8"
-                            android:text="Cube" />
+                            android:tag="c_8" />
 
                         <Button
                             android:id="@+id/c_9"
@@ -328,8 +407,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
                             android:onClick="addAction"
-                            android:tag="c_9"
-                            android:text="Cube" />
+                            android:tag="c_9" />
 
                         <Button
                             android:id="@+id/c_10"
@@ -338,8 +416,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
                             android:onClick="addAction"
-                            android:tag="c_10"
-                            android:text="Cube" />
+                            android:tag="c_10" />
 
                         <Button
                             android:id="@+id/c_11"
@@ -348,8 +425,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
                             android:onClick="addAction"
-                            android:tag="c_11"
-                            android:text="Cube" />
+                            android:tag="c_11" />
 
                         <Button
                             android:id="@+id/c_12"
@@ -358,8 +434,7 @@
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
                             android:onClick="addAction"
-                            android:tag="c_12"
-                            android:text="Cube" />
+                            android:tag="c_12" />
 
                         <Space
                             android:layout_width="match_parent"
@@ -415,7 +490,7 @@
                         android:backgroundTint="@android:color/holo_blue_dark"
                         android:onClick="addAction"
                         android:tag="sw_b2"
-                        android:text="Button" />
+                        android:text="Switch" />
 
                     <Space
                         android:layout_width="match_parent"
@@ -430,6 +505,53 @@
                 android:layout_weight=".111"
                 android:orientation="horizontal">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".111"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_weight="1" />
+
+                            <Button
+                                android:id="@+id/cp_b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="#ffff00"
+                                android:onClick="addAction"
+                                android:tag="cp_b" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"></LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -456,7 +578,22 @@
 
                     <Space
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
+                        android:layout_height="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/ex_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@android:color/holo_blue_dark"
+                        android:onClick="addAction"
+                        android:tag="ex_b"
+                        android:text="Ex" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
                         android:layout_weight="1" />
 
                     <Button

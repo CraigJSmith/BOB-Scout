@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,14 +20,16 @@ public class ScoutMatch extends AppCompatActivity {
     private boolean started;
 
     private Button start;
+    private Button fpickup;
+    private Button fdrop;
 
     private Button p_r1;
     private Button p_r2;
     private Button p_b1;
     private Button p_b2;
 
-    //private Button cp_r;
-    //private Button cp_b;
+    private Button cp_r;
+    private Button cp_b;
 
     private Button sw_r1;
     private Button sw_r2;
@@ -93,6 +96,8 @@ public class ScoutMatch extends AppCompatActivity {
         sc_2 = findViewById(R.id.sc_2);
 
         start = findViewById(R.id.start);
+        fpickup = findViewById(R.id.fpickup);
+        fdrop = findViewById(R.id.fdrop);
     }
 
     public void startAndStopButton(View v) {
