@@ -1,5 +1,7 @@
 package com.example.craig.bobscout;
 
+import android.arch.persistence.room.Room;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ScoutMatch extends AppCompatActivity {
+
+    private ActionDao dao;
+    private AppDatabase db;
 
     private ArrayList<Action> actions;
     private static long startTime;
@@ -56,6 +61,10 @@ public class ScoutMatch extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scout_match);
+
+//        Context context = InstrumentationRegistry.getTargetContext();
+//        db = Room.inMemoryDatabaseBuilder(context, AppDatabase.class).build();
+//        dao = db.getActionDao();
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -171,5 +180,17 @@ public class ScoutMatch extends AppCompatActivity {
         for (Action a : actions) {
             data += a.getType() + ", " + a.getTime() +"\n";
         }
+    }
+
+    private static ActionEntity addAction(final AppDatabase db, ActionEntity action) {
+        db.actionDao().insertAll(action);
+        return action;
+    }
+
+    private static void populateWithTestData(AppDatabase db) {
+        ActionEntity action = new ActionEntity();
+        action.setActionTime(1001);
+        action.setActionType("r_plate");
+        addAction(db, action);
     }
 }
