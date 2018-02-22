@@ -37,10 +37,10 @@ public class Submit extends AppCompatActivity {
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout");
             dir.mkdirs();
-            File file = new File(dir, "Match.csv");
+            File file = new File(dir, matchNum + ":" + teamNum + ".csv");
 
             try {
-                FileOutputStream fileOutputStream = new FileOutputStream(file, true);
+                FileOutputStream fileOutputStream = new FileOutputStream(file, false);
                 fileOutputStream.write(data.getBytes());
                 fileOutputStream.close();
                 Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_LONG).show();

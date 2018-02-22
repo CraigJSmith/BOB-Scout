@@ -8,6 +8,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <GridLayout
+        android:id="@+id/gridlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -34,6 +35,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_red_light"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="p_r1"
                         android:text="Portal" />
@@ -49,6 +51,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_red_light"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="ex_r"
                         android:text="Ex" />
@@ -64,6 +67,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_red_light"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="p_r2"
                         android:text="Portal" />
@@ -112,6 +116,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:backgroundTint="#ffff00"
+                                android:enabled="false"
                                 android:onClick="addAction"
                                 android:tag="cp_r" />
 
@@ -150,6 +155,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_red_light"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sw_r1"
                         android:text="Switch" />
@@ -165,6 +171,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_red_light"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sw_r2"
                         android:text="Switch" />
@@ -205,6 +212,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="c_1" />
 
@@ -214,6 +222,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="c_2" />
 
@@ -223,6 +232,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="c_3" />
 
@@ -232,6 +242,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="c_4" />
 
@@ -241,6 +252,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="c_5" />
 
@@ -250,6 +262,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="#ffff00"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="c_6" />
 
@@ -286,6 +299,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sc_1"
                         android:text="Scale" />
@@ -297,10 +311,11 @@
 
                     <Button
                         android:id="@+id/fpickup"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
                         android:layout_weight="1"
                         android:background="@drawable/roundedbutton"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="fpickup"
                         android:text="Pickup" />
@@ -311,11 +326,12 @@
                         android:layout_weight="1" />
 
                     <Button
-                        android:id="@+id/start"
+                        android:id="@+id/startstop"
                         android:layout_width="match_parent"
                         android:layout_height="10dp"
                         android:layout_weight="1"
                         android:backgroundTint="#1aff00"
+                        android:enabled="true"
                         android:onClick="startAndStopButton"
                         android:text="Start" />
 
@@ -326,10 +342,11 @@
 
                     <Button
                         android:id="@+id/fdrop"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
                         android:layout_weight="1"
                         android:background="@drawable/roundedbutton"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="fdrop"
                         android:text="Drop" />
@@ -344,6 +361,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sc_2"
                         android:text="Scale" />
@@ -388,6 +406,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
+                            android:enabled="false"
                             android:onClick="addAction"
                             android:tag="c_7" />
 
@@ -397,6 +416,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
+                            android:enabled="false"
                             android:onClick="addAction"
                             android:tag="c_8" />
 
@@ -406,6 +426,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
+                            android:enabled="false"
                             android:onClick="addAction"
                             android:tag="c_9" />
 
@@ -415,6 +436,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
+                            android:enabled="false"
                             android:onClick="addAction"
                             android:tag="c_10" />
 
@@ -424,6 +446,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
+                            android:enabled="false"
                             android:onClick="addAction"
                             android:tag="c_11" />
 
@@ -433,6 +456,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:backgroundTint="#ffff00"
+                            android:enabled="false"
                             android:onClick="addAction"
                             android:tag="c_12" />
 
@@ -473,6 +497,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_blue_dark"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sw_b1"
                         android:text="Switch" />
@@ -488,6 +513,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_blue_dark"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sw_b2"
                         android:text="Switch" />
@@ -534,6 +560,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:backgroundTint="#ffff00"
+                                android:enabled="false"
                                 android:onClick="addAction"
                                 android:tag="cp_b" />
 
@@ -572,6 +599,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_blue_dark"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="p_b1"
                         android:text="Portal" />
@@ -587,6 +615,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_blue_dark"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="ex_b"
                         android:text="Ex" />
@@ -602,6 +631,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@android:color/holo_blue_dark"
+                        android:enabled="false"
                         android:onClick="addAction"
                         android:tag="p_b2"
                         android:text="Portal" />
