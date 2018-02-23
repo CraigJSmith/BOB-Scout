@@ -1,30 +1,24 @@
 package com.example.craig.bobscout;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 
 public class ScoutMatch extends AppCompatActivity {
 
-    private ArrayList<Action> actions;
-    private static long startTime;
-    private String data;
     private String matchNum;
     private String teamNum;
+    private static long startTime;
+    private String data;
     private boolean started;
+    private ArrayList<Action> actions;
     private ArrayList<View> buttons;
-    private Button startStopButton;
     private View prevButton;
 
     @Override
@@ -36,15 +30,10 @@ public class ScoutMatch extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         matchNum = extras.getString("EXTRA_MATCH");
         teamNum = extras.getString("EXTRA_TEAM");
-        started = false;
-
-        startStopButton = findViewById(R.id.startstop);
-        prevButton = startStopButton;
-
         startTime = System.currentTimeMillis();
-        actions = new ArrayList<Action>();
         data = "";
-
+        started = false;
+        actions = new ArrayList<Action>();
         buttons = new ArrayList<View>();
 
         buttons.add(findViewById(R.id.p_r1));
@@ -59,9 +48,6 @@ public class ScoutMatch extends AppCompatActivity {
         buttons.add(findViewById(R.id.c_1));
         buttons.add(findViewById(R.id.c_2));
         buttons.add(findViewById(R.id.c_3));
-        buttons.add(findViewById(R.id.c_4));
-        buttons.add(findViewById(R.id.c_5));
-        buttons.add(findViewById(R.id.c_6));
 
         buttons.add(findViewById(R.id.sc_1));
         buttons.add(findViewById(R.id.fpickup));
@@ -69,12 +55,9 @@ public class ScoutMatch extends AppCompatActivity {
         buttons.add(findViewById(R.id.fdrop));
         buttons.add(findViewById(R.id.sc_2));
 
-        buttons.add(findViewById(R.id.c_7));
-        buttons.add(findViewById(R.id.c_8));
-        buttons.add(findViewById(R.id.c_9));
-        buttons.add(findViewById(R.id.c_10));
-        buttons.add(findViewById(R.id.c_11));
-        buttons.add(findViewById(R.id.c_12));
+        buttons.add(findViewById(R.id.c_4));
+        buttons.add(findViewById(R.id.c_5));
+        buttons.add(findViewById(R.id.c_6));
 
         buttons.add(findViewById(R.id.sw_b1));
         buttons.add(findViewById(R.id.sw_b2));
@@ -88,11 +71,9 @@ public class ScoutMatch extends AppCompatActivity {
 
     public void startAndStopButton(View v) {
         started = !started;
-
         if(started) {
             start(v);
-        }
-        else {
+        } else {
             stop(v);
         }
     }
@@ -105,14 +86,13 @@ public class ScoutMatch extends AppCompatActivity {
     public void stop(View v) {
         enableButtons(false);
         saveData();
-        Intent intent = new Intent(this, Submit.class);
 
+        Intent intent = new Intent(this, Submit.class);
         Bundle extras = new Bundle();
         extras.putString("EXTRA_MATCH", matchNum);
         extras.putString("EXTRA_TEAM", teamNum);
         extras.putString("EXTRA_DATA", data);
         intent.putExtras(extras);
-
         startActivity(intent);
     }
 
@@ -124,10 +104,11 @@ public class ScoutMatch extends AppCompatActivity {
     }
 
     public void addAction(View v) {
-        if(!v.equals(prevButton)) {
+        if(!v.equals(prevButton) && prevButton != null) {
             ((ToggleButton)prevButton).setChecked(false);
         }
         prevButton = v;
+
         long time = System.currentTimeMillis() - startTime;
         String action = v.getTag().toString();
         Action a = new Action(action, time);

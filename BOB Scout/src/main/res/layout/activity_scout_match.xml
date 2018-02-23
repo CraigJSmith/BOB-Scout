@@ -232,6 +232,11 @@
                         android:textOff=" "
                         android:textOn=" " />
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_weight="1" />
+
                     <ToggleButton
                         android:id="@+id/c_2"
                         android:layout_width="match_parent"
@@ -245,6 +250,11 @@
                         android:textOff=" "
                         android:textOn=" " />
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_weight="1" />
+
                     <ToggleButton
                         android:id="@+id/c_3"
                         android:layout_width="match_parent"
@@ -254,45 +264,6 @@
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="c_3"
-                        android:text=" "
-                        android:textOff=" "
-                        android:textOn=" " />
-
-                    <ToggleButton
-                        android:id="@+id/c_4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/yellowscoutbutton"
-                        android:enabled="false"
-                        android:onClick="addAction"
-                        android:tag="c_4"
-                        android:text=" "
-                        android:textOff=" "
-                        android:textOn=" " />
-
-                    <ToggleButton
-                        android:id="@+id/c_5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/yellowscoutbutton"
-                        android:enabled="false"
-                        android:onClick="addAction"
-                        android:tag="c_5"
-                        android:text=" "
-                        android:textOff=" "
-                        android:textOn=" " />
-
-                    <ToggleButton
-                        android:id="@+id/c_6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/yellowscoutbutton"
-                        android:enabled="false"
-                        android:onClick="addAction"
-                        android:tag="c_6"
                         android:text=" "
                         android:textOff=" "
                         android:textOn=" " />
@@ -330,6 +301,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@drawable/grayscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sc_1"
@@ -365,11 +337,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="10dp"
                         android:layout_weight="1"
+                        android:background="#263238 "
                         android:enabled="true"
                         android:onClick="startAndStopButton"
-                        android:text="Start"
-                        android:textOff="Stop"
-                        android:textOn="Start" />
+                        android:textColor="@android:color/white"
+                        android:textOff="Start"
+                        android:textOn="Stop" />
 
                     <Space
                         android:layout_width="match_parent"
@@ -399,6 +372,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@drawable/grayscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sc_2"
@@ -441,79 +415,50 @@
                             android:layout_weight="1" />
 
                         <ToggleButton
-                            android:id="@+id/c_7"
+                            android:id="@+id/c_4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/yellowscoutbutton"
                             android:enabled="false"
                             android:onClick="addAction"
-                            android:tag="c_7"
+                            android:tag="c_4"
                             android:text=" "
                             android:textOff=" "
                             android:textOn=" " />
 
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="25dp"
+                            android:layout_weight="1" />
+
                         <ToggleButton
-                            android:id="@+id/c_8"
+                            android:id="@+id/c_5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/yellowscoutbutton"
                             android:enabled="false"
                             android:onClick="addAction"
-                            android:tag="c_8"
+                            android:tag="c_5"
                             android:text=" "
                             android:textOff=" "
                             android:textOn=" " />
 
-                        <ToggleButton
-                            android:id="@+id/c_9"
+                        <Space
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/yellowscoutbutton"
-                            android:enabled="false"
-                            android:onClick="addAction"
-                            android:tag="c_9"
-                            android:text=" "
-                            android:textOff=" "
-                            android:textOn=" " />
+                            android:layout_height="25dp"
+                            android:layout_weight="1" />
 
                         <ToggleButton
-                            android:id="@+id/c_10"
+                            android:id="@+id/c_6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/yellowscoutbutton"
                             android:enabled="false"
                             android:onClick="addAction"
-                            android:tag="c_10"
-                            android:text=" "
-                            android:textOff=" "
-                            android:textOn=" " />
-
-                        <ToggleButton
-                            android:id="@+id/c_11"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/yellowscoutbutton"
-                            android:enabled="false"
-                            android:onClick="addAction"
-                            android:tag="c_11"
-                            android:text=" "
-                            android:textOff=" "
-                            android:textOn=" " />
-
-                        <ToggleButton
-                            android:id="@+id/c_12"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/yellowscoutbutton"
-                            android:enabled="false"
-                            android:onClick="addAction"
-                            android:tag="c_12"
+                            android:tag="c_6"
                             android:text=" "
                             android:textOff=" "
                             android:textOn=" " />
@@ -576,7 +521,9 @@
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sw_b2"
-                        android:text="Switch" />
+                        android:text="Switch"
+                        android:textOff="Switch"
+                        android:textOn="Switch" />
 
                     <Space
                         android:layout_width="match_parent"
