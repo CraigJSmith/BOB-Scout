@@ -29,48 +29,54 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/p_r1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_red_light"
+                        android:background="@drawable/redscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="p_r1"
-                        android:text="Portal" />
+                        android:text="Portal"
+                        android:textOff="Portal"
+                        android:textOn="Portal" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/ex_r"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_red_light"
+                        android:background="@drawable/redscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="ex_r"
-                        android:text="Ex" />
+                        android:text="Ex"
+                        android:textOff="Ex"
+                        android:textOn="Ex" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/p_r2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_red_light"
+                        android:background="@drawable/redscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="p_r2"
-                        android:text="Portal" />
+                        android:text="Portal"
+                        android:textOff="Portal"
+                        android:textOn="Portal" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -110,15 +116,18 @@
                                 android:layout_height="120dp"
                                 android:layout_weight="1" />
 
-                            <Button
+                            <ToggleButton
                                 android:id="@+id/cp_r"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:backgroundTint="#ffff00"
+                                android:background="@drawable/yellowscoutbutton"
                                 android:enabled="false"
                                 android:onClick="addAction"
-                                android:tag="cp_r" />
+                                android:tag="cp_r"
+                                android:text=" "
+                                android:textOff=" "
+                                android:textOn=" " />
 
                             <Space
                                 android:layout_width="match_parent"
@@ -149,32 +158,36 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/sw_r1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_red_light"
+                        android:background="@drawable/redscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sw_r1"
-                        android:text="Switch" />
+                        android:text="Switch"
+                        android:textOff="Switch"
+                        android:textOn="Switch" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/sw_r2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_red_light"
+                        android:background="@drawable/redscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sw_r2"
-                        android:text="Switch" />
+                        android:text="Switch"
+                        android:textOff="Switch"
+                        android:textOn="Switch" />
 
                     <Space
                         android:layout_width="match_parent"
@@ -206,65 +219,83 @@
                         android:layout_height="25dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/c_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="#ffff00"
+                        android:background="@drawable/yellowscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
-                        android:tag="c_1" />
+                        android:tag="c_1"
+                        android:text=" "
+                        android:textOff=" "
+                        android:textOn=" " />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/c_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="#ffff00"
+                        android:background="@drawable/yellowscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
-                        android:tag="c_2" />
+                        android:tag="c_2"
+                        android:text=" "
+                        android:textOff=" "
+                        android:textOn=" " />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/c_3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="#ffff00"
+                        android:background="@drawable/yellowscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
-                        android:tag="c_3" />
+                        android:tag="c_3"
+                        android:text=" "
+                        android:textOff=" "
+                        android:textOn=" " />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/c_4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="#ffff00"
+                        android:background="@drawable/yellowscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
-                        android:tag="c_4" />
+                        android:tag="c_4"
+                        android:text=" "
+                        android:textOff=" "
+                        android:textOn=" " />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/c_5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="#ffff00"
+                        android:background="@drawable/yellowscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
-                        android:tag="c_5" />
+                        android:tag="c_5"
+                        android:text=" "
+                        android:textOff=" "
+                        android:textOn=" " />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/c_6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="#ffff00"
+                        android:background="@drawable/yellowscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
-                        android:tag="c_6" />
+                        android:tag="c_6"
+                        android:text=" "
+                        android:textOff=" "
+                        android:textOn=" " />
 
                     <Space
                         android:layout_width="match_parent"
@@ -294,7 +325,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/sc_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -302,61 +333,68 @@
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sc_1"
-                        android:text="Scale" />
+                        android:text="Scale"
+                        android:textOff="Scale"
+                        android:textOn="Scale" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/fpickup"
                         android:layout_width="wrap_content"
                         android:layout_height="1dp"
                         android:layout_weight="1"
-                        android:background="@drawable/roundedbutton"
+                        android:background="@drawable/greenscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="fpickup"
-                        android:text="Pickup" />
+                        android:text="Pickup"
+                        android:textOff="Pickup"
+                        android:textOn="Pickup" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/startstop"
                         android:layout_width="match_parent"
                         android:layout_height="10dp"
                         android:layout_weight="1"
-                        android:backgroundTint="#1aff00"
                         android:enabled="true"
                         android:onClick="startAndStopButton"
-                        android:text="Start" />
+                        android:text="Start"
+                        android:textOff="Stop"
+                        android:textOn="Start" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/fdrop"
                         android:layout_width="wrap_content"
                         android:layout_height="1dp"
                         android:layout_weight="1"
-                        android:background="@drawable/roundedbutton"
+                        android:background="@drawable/greenscoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="fdrop"
-                        android:text="Drop" />
+                        android:text="Drop"
+                        android:textOff="Drop"
+                        android:textOn="Drop" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/sc_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -364,7 +402,9 @@
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sc_2"
-                        android:text="Scale" />
+                        android:text="Scale"
+                        android:textOff="Scale"
+                        android:textOn="Scale" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -400,65 +440,83 @@
                             android:layout_height="25dp"
                             android:layout_weight="1" />
 
-                        <Button
+                        <ToggleButton
                             android:id="@+id/c_7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="#ffff00"
+                            android:background="@drawable/yellowscoutbutton"
                             android:enabled="false"
                             android:onClick="addAction"
-                            android:tag="c_7" />
+                            android:tag="c_7"
+                            android:text=" "
+                            android:textOff=" "
+                            android:textOn=" " />
 
-                        <Button
+                        <ToggleButton
                             android:id="@+id/c_8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="#ffff00"
+                            android:background="@drawable/yellowscoutbutton"
                             android:enabled="false"
                             android:onClick="addAction"
-                            android:tag="c_8" />
+                            android:tag="c_8"
+                            android:text=" "
+                            android:textOff=" "
+                            android:textOn=" " />
 
-                        <Button
+                        <ToggleButton
                             android:id="@+id/c_9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="#ffff00"
+                            android:background="@drawable/yellowscoutbutton"
                             android:enabled="false"
                             android:onClick="addAction"
-                            android:tag="c_9" />
+                            android:tag="c_9"
+                            android:text=" "
+                            android:textOff=" "
+                            android:textOn=" " />
 
-                        <Button
+                        <ToggleButton
                             android:id="@+id/c_10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="#ffff00"
+                            android:background="@drawable/yellowscoutbutton"
                             android:enabled="false"
                             android:onClick="addAction"
-                            android:tag="c_10" />
+                            android:tag="c_10"
+                            android:text=" "
+                            android:textOff=" "
+                            android:textOn=" " />
 
-                        <Button
+                        <ToggleButton
                             android:id="@+id/c_11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="#ffff00"
+                            android:background="@drawable/yellowscoutbutton"
                             android:enabled="false"
                             android:onClick="addAction"
-                            android:tag="c_11" />
+                            android:tag="c_11"
+                            android:text=" "
+                            android:textOff=" "
+                            android:textOn=" " />
 
-                        <Button
+                        <ToggleButton
                             android:id="@+id/c_12"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:backgroundTint="#ffff00"
+                            android:background="@drawable/yellowscoutbutton"
                             android:enabled="false"
                             android:onClick="addAction"
-                            android:tag="c_12" />
+                            android:tag="c_12"
+                            android:text=" "
+                            android:textOff=" "
+                            android:textOn=" " />
 
                         <Space
                             android:layout_width="match_parent"
@@ -491,28 +549,30 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/sw_b1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_blue_dark"
+                        android:background="@drawable/bluescoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sw_b1"
-                        android:text="Switch" />
+                        android:text="Switch"
+                        android:textOff="Switch"
+                        android:textOn="Switch" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/sw_b2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_blue_dark"
+                        android:background="@drawable/bluescoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="sw_b2"
@@ -554,15 +614,18 @@
                                 android:layout_height="120dp"
                                 android:layout_weight="1" />
 
-                            <Button
+                            <ToggleButton
                                 android:id="@+id/cp_b"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:backgroundTint="#ffff00"
+                                android:background="@drawable/yellowscoutbutton"
                                 android:enabled="false"
                                 android:onClick="addAction"
-                                android:tag="cp_b" />
+                                android:tag="cp_b"
+                                android:text=" "
+                                android:textOff=" "
+                                android:textOn=" " />
 
                             <Space
                                 android:layout_width="match_parent"
@@ -593,48 +656,54 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/p_b1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_blue_dark"
+                        android:background="@drawable/bluescoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="p_b1"
-                        android:text="Portal" />
+                        android:text="Portal"
+                        android:textOff="Portal"
+                        android:textOn="Portal" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/ex_b"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_blue_dark"
+                        android:background="@drawable/bluescoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="ex_b"
-                        android:text="Ex" />
+                        android:text="Ex"
+                        android:textOff="Ex"
+                        android:textOn="Ex" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <ToggleButton
                         android:id="@+id/p_b2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:backgroundTint="@android:color/holo_blue_dark"
+                        android:background="@drawable/bluescoutbutton"
                         android:enabled="false"
                         android:onClick="addAction"
                         android:tag="p_b2"
-                        android:text="Portal" />
+                        android:text="Portal"
+                        android:textOff="Portal"
+                        android:textOn="Portal" />
                 </LinearLayout>
 
             </LinearLayout>

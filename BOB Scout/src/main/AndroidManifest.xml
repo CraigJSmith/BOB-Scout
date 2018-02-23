@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:minSdkVersion="16"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.craig.bobscout.ScoutSetup" android:screenOrientation="landscape">
             <intent-filter>

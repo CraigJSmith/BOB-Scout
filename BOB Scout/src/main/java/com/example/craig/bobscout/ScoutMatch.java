@@ -2,12 +2,16 @@ package com.example.craig.bobscout;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 
@@ -21,6 +25,7 @@ public class ScoutMatch extends AppCompatActivity {
     private boolean started;
     private ArrayList<View> buttons;
     private Button startStopButton;
+    private View prevButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class ScoutMatch extends AppCompatActivity {
         started = false;
 
         startStopButton = findViewById(R.id.startstop);
+        prevButton = startStopButton;
 
         startTime = System.currentTimeMillis();
         actions = new ArrayList<Action>();
@@ -94,7 +100,6 @@ public class ScoutMatch extends AppCompatActivity {
     public void start(View v) {
         enableButtons(true);
         startTime = System.currentTimeMillis();
-        startStopButton.setText("Stop");
     }
 
     public void stop(View v) {
@@ -119,6 +124,10 @@ public class ScoutMatch extends AppCompatActivity {
     }
 
     public void addAction(View v) {
+        if(!v.equals(prevButton)) {
+            ((ToggleButton)prevButton).setChecked(false);
+        }
+        prevButton = v;
         long time = System.currentTimeMillis() - startTime;
         String action = v.getTag().toString();
         Action a = new Action(action, time);

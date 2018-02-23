@@ -3,5 +3,9 @@
     <color name="colorPrimary">#424242</color>
     <color name="colorPrimaryDark">#212121</color>
     <color name="colorAccent">#03a9f4</color>
-    <color name="dataOutput">#E0E0E0</color>
+    <color name="red">#e94141</color>
+    <color name="blue">#438de1</color>
+    <color name="green">#54c141</color>\
+    <color name="yellow">#FFEB3B</color>
+    <color name="highlighted">#BDBDBD</color>
 </resources>

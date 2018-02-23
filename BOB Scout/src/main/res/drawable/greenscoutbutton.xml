@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/highlighted"
+        android:state_pressed="true" />
+    <item android:drawable="@color/highlighted"
+        android:state_focused="true" />
+    <item android:drawable="@color/green"
+        android:state_focused="false" />
+    <shape
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:shape="oval">>
+        <solid android:color="#1aff00" />
+        <size android:height="1dp"
+            android:width="1dp"/>
+    </shape>
+
+</selector>
