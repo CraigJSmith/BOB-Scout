@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.craig.bobscout.ScoutAuto"
+    tools:layout_editor_absoluteY="89dp">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ToggleButton
+            android:id="@+id/autoCross"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Auto Line"
+            android:textOff="Auto Line"
+            android:textOn="Auto Line" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <ToggleButton
+            android:id="@+id/cubeSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cube on Switch"
+            android:textOff="Cube on Switch"
+            android:textOn="Cube on Switch" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <ToggleButton
+            android:id="@+id/cubeScale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cube on Scale"
+            android:textOff="Cube on Scale"
+            android:textOn="Cube on Scale" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <ToggleButton
+            android:id="@+id/cubePickup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pickup Cube"
+            android:textOff="Pickup Cube"
+            android:textOn="Pickup Cube" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startTeleop"
+            android:text="Start Teleop" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -2,36 +2,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.craig.bobscout">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:minSdkVersion="16"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:minSdkVersion="16"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.craig.bobscout.ScoutSetup" android:screenOrientation="landscape">
+        <activity
+            android:name=".ScoutSetup"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
-            android:name="com.example.craig.bobscout.ScoutMatch"
-            android:parentActivityName="com.example.craig.bobscout.ScoutSetup" android:screenOrientation="landscape">
-
-        </activity>
-
+            android:name=".ScoutMatch"
+            android:parentActivityName=".ScoutSetup"
+            android:screenOrientation="landscape"></activity>
         <activity
-            android:name="com.example.craig.bobscout.Submit"
-            android:parentActivityName="com.example.craig.bobscout.ScoutSetup" android:screenOrientation="landscape">
-        </activity>
-
+            android:name=".Submit"
+            android:parentActivityName=".ScoutSetup"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".ScoutAuto"></activity>
     </application>
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

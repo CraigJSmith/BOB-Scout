@@ -16,9 +16,16 @@ import java.io.IOException;
 public class Submit extends AppCompatActivity {
 
     private TextView dataOutput;
+    private boolean autoLine;
+    private boolean autoCubeSwitch;
+    private boolean autoCubeScale;
+    private boolean autoCubePickup;
+
     private String data;
     private String matchNum;
     private String teamNum;
+
+    private String output;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +35,18 @@ public class Submit extends AppCompatActivity {
         dataOutput = (TextView) findViewById(R.id.dataOutput);
         dataOutput.setMovementMethod(new ScrollingMovementMethod());
 
-        Intent intent = getIntent();
-        Bundle extras = intent.getExtras();
+        Bundle extras = getIntent().getExtras();
+
+        autoLine = extras.getBoolean("EXTRA_AUTO_CROSS");
+        autoCubeSwitch = extras.getBoolean("EXTRA_AUTO_SWITCH");
+        autoCubeScale = extras.getBoolean("EXTRA_AUTO_SCALE");
+        autoCubePickup = extras.getBoolean("EXTRA_AUTO_PICKUP");
+
         matchNum = extras.getString("EXTRA_MATCH");
         teamNum = extras.getString("EXTRA_TEAM");
         data = extras.getString("EXTRA_DATA");
+
+        output = matchNum + "@" + teamNum + "," + autoLine + ":" + autoCubeSwitch + ":" + autoCubeScale + ":" + autoCubePickup + "," + data;
 
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout");
@@ -41,7 +55,7 @@ public class Submit extends AppCompatActivity {
 
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(file, false);
-                fileOutputStream.write(data.getBytes());
+                fileOutputStream.write(output.getBytes());
                 fileOutputStream.close();
                 Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_LONG).show();
             } catch (IOException e) {
@@ -50,7 +64,7 @@ public class Submit extends AppCompatActivity {
             }
 
         }
-        dataOutput.setText(data);
+        dataOutput.setText(output);
     }
 
     @Override

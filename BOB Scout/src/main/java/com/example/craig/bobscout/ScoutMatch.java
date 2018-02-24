@@ -88,7 +88,7 @@ public class ScoutMatch extends AppCompatActivity {
         saveData();
 
         Intent intent = new Intent(this, Submit.class);
-        Bundle extras = new Bundle();
+        Bundle extras = getIntent().getExtras();
         extras.putString("EXTRA_MATCH", matchNum);
         extras.putString("EXTRA_TEAM", teamNum);
         extras.putString("EXTRA_DATA", data);
@@ -116,7 +116,6 @@ public class ScoutMatch extends AppCompatActivity {
     }
 
     public void saveData() {
-        data = matchNum + "@" + teamNum + ",";
         for (Action a : actions) {
             data += a.getType() + ":" + a.getTime() +",";
         }

@@ -54,20 +54,13 @@ public class ScoutSetup extends AppCompatActivity {
             });
             alertDialog.show();
         } else {
-            //begin();
-            Intent intent = new Intent(this, ScoutMatch.class);
-            Bundle extras = new Bundle();
-            extras.putString("EXTRA_MATCH", matchNum);
-            extras.putString("EXTRA_TEAM", teamNum);
-            intent.putExtras(extras);
-
-            startActivity(intent);
+            begin();
         }
 
     }
 
     private void begin() {
-        Intent intent = new Intent(this, ScoutMatch.class);
+        Intent intent = new Intent(this, ScoutAuto.class);
         Bundle extras = new Bundle();
         extras.putString("EXTRA_MATCH", matchNum);
         extras.putString("EXTRA_TEAM", teamNum);
