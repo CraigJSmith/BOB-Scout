@@ -4,6 +4,7 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import java.io.File;
@@ -14,7 +15,7 @@ import static java.util.Collections.max;
 
 public class ViewMatches extends AppCompatActivity {
 
-    TextView matchesView;
+    WebView display;
     String matchList;
     HashMap<Integer, ArrayList<String>> matches;
 
@@ -22,9 +23,10 @@ public class ViewMatches extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_matches);
-        matchesView = findViewById(R.id.matches);
+        //matchesView = findViewById(R.id.matches);
         matchList = "";
         matches = new HashMap<Integer, ArrayList<String>>();
+        display = (WebView) findViewById(R.id.display);
 
         File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/");
         File[] files = dir.listFiles();
@@ -41,22 +43,22 @@ public class ViewMatches extends AppCompatActivity {
 
         }
 
+        matchList += "<style>table { border-collapse: collapse } table, th, td { border: 1px solid black; }</style>";
+        matchList += "<table style=\"width:100%\"> <tr> <th>Match</th> <th>Teams</th> </tr>";
         for(int i = 1; i <= max(matches.keySet()); i++) {
-            matchList += "<b>Match " + i + ": </b>";
-
+            matchList += "<tr> <td>" + i + "</td> <td>";
             if(matches.keySet().contains(i)) {
                 for (String team : matches.get(i)) {
-                    matchList += team + "  ";
+                    matchList +=  team;
+                    if(matches.get(i).size() > 1) {
+                        matchList += ", ";
+                    }
                 }
-
             }
-            matchList += "<br></br>";
+            matchList += "</td> </tr>";
         }
+        matchList += "</table>";
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            matchesView.setText(Html.fromHtml(matchList,Html.FROM_HTML_MODE_LEGACY));
-        } else {
-            matchesView.setText(Html.fromHtml(matchList));
-        }
+        display.loadData(matchList, "text/html", null);
     }
 }
