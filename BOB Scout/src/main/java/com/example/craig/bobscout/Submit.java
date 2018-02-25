@@ -69,7 +69,7 @@ public class Submit extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent newMatch = new Intent(this, ScoutSetup.class);
+        Intent newMatch = new Intent(this, ScoutMatchSetup.class);
         startActivity(newMatch);
     }
 }

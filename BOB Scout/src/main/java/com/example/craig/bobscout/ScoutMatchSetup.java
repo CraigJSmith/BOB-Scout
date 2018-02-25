@@ -13,7 +13,7 @@ import android.widget.EditText;
 import java.io.File;
 import java.util.Arrays;
 
-public class ScoutSetup extends AppCompatActivity {
+public class ScoutMatchSetup extends AppCompatActivity {
 
     private EditText matchNumBox;
     private EditText teamNumBox;
