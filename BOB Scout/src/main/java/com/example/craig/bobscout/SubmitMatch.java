@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class Submit extends AppCompatActivity {
+public class SubmitMatch extends AppCompatActivity {
 
     private TextView dataOutput;
     private boolean autoLine;

@@ -15,30 +15,37 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ScoutMatchSetup"
-            android:screenOrientation="landscape"
-            android:parentActivityName=".Start" />
+            android:parentActivityName=".Start"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".ScoutMatch"
             android:parentActivityName=".ScoutMatchSetup"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".Submit"
+            android:name=".SubmitMatch"
             android:parentActivityName=".ScoutMatchSetup"
             android:screenOrientation="landscape" />
         <activity
             android:name=".ScoutAuto"
             android:parentActivityName=".ScoutMatchSetup"
             android:screenOrientation="landscape" />
-        <activity android:name=".ViewMatches"
+        <activity
+            android:name=".ViewMatches"
             android:parentActivityName=".Start" />
-        <activity android:name=".Start">
-            android:screenOrientation="landscape"
+        <activity
+            android:name=".Start"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ScoutTeam"
+            android:parentActivityName=".Start"
+            android:screenOrientation="portrait" />
+        <activity android:name=".SubmitTeam"></activity>
     </application>
 
 </manifest>

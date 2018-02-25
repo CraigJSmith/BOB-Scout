@@ -22,4 +22,9 @@ public class Start extends AppCompatActivity {
         Intent intent = new Intent(this, ViewMatches.class);
         startActivity(intent);
     }
+
+    public void scoutTeam(View v) {
+        Intent intent = new Intent(this, ScoutTeam.class);
+        startActivity(intent);
+    }
 }
