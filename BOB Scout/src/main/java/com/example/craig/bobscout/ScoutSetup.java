@@ -25,8 +25,8 @@ public class ScoutSetup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scout_setup);
 
-        matchNumBox = (EditText) findViewById(R.id.matchNumBox);
-        teamNumBox = (EditText) findViewById(R.id.teamNumBox);
+        matchNumBox = findViewById(R.id.matchNumBox);
+        teamNumBox = findViewById(R.id.teamNumBox);
     }
 
     public void submit(View v) {
@@ -36,7 +36,7 @@ public class ScoutSetup extends AppCompatActivity {
         File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/");
         File[] files = dir.listFiles();
 
-        if(Arrays.asList(files).contains(new File(Environment.getExternalStorageDirectory().toString() + "/BOBScout/" + matchNum + "_" + teamNum + ".csv"))) {
+        if(files == null || Arrays.asList(files).contains(new File(Environment.getExternalStorageDirectory().toString() + "/BOBScout/" + matchNum + "_" + teamNum + ".csv"))) {
             AlertDialog alertDialog = new AlertDialog.Builder(this).create();
             alertDialog.setTitle("Overwrite match?");
             alertDialog.setMessage("This match has already been scouted. Are you sure you want to redo it?");
@@ -66,6 +66,11 @@ public class ScoutSetup extends AppCompatActivity {
         extras.putString("EXTRA_TEAM", teamNum);
         intent.putExtras(extras);
 
+        startActivity(intent);
+    }
+
+    public void viewMatches(View v) {
+        Intent intent = new Intent(this, ViewMatches.class);
         startActivity(intent);
     }
 }

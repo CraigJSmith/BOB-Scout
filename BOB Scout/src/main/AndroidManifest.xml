@@ -25,12 +25,16 @@
         <activity
             android:name=".ScoutMatch"
             android:parentActivityName=".ScoutSetup"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".Submit"
             android:parentActivityName=".ScoutSetup"
-            android:screenOrientation="landscape"></activity>
-        <activity android:name=".ScoutAuto"></activity>
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ScoutAuto"
+            android:parentActivityName=".ScoutSetup"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ViewMatches"></activity>
     </application>
 
 </manifest>

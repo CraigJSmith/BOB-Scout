@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BOB Scout/BOB Scout.iml" filepath="$PROJECT_DIR$/BOB Scout/BOB Scout.iml" />
       <module fileurl="file://$PROJECT_DIR$/BOB-Scout.iml" filepath="$PROJECT_DIR$/BOB-Scout.iml" />
-      <module fileurl="file://D:\craig\Documents\GitHub\BOB-Scout\another-app-that-isnt-scouting.iml" filepath="D:\craig\Documents\GitHub\BOB-Scout\another-app-that-isnt-scouting.iml" />
-      <module fileurl="file://C:\Users\craig\AndroidStudioProjects\MyApplication2\BOB Scout\app.iml" filepath="C:\Users\craig\AndroidStudioProjects\MyApplication2\BOB Scout\app.iml" />
     </modules>
   </component>
 </project>
