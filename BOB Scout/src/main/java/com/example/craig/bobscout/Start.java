@@ -27,4 +27,9 @@ public class Start extends AppCompatActivity {
         Intent intent = new Intent(this, ScoutTeam.class);
         startActivity(intent);
     }
+
+    public void viewTeams(View v) {
+        Intent intent = new Intent(this, ViewTeams.class);
+        startActivity(intent);
+    }
 }

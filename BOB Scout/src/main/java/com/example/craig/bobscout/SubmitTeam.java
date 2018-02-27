@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -37,7 +38,7 @@ public class SubmitTeam extends AppCompatActivity {
         output = teamNum + "," + teamName + "," + teamAge + "," + driveTrain;
 
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/Team/");
+            File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/Teams/");
             dir.mkdirs();
             File file = new File(dir, teamNum + ".csv");
 
@@ -48,7 +49,6 @@ public class SubmitTeam extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Saved!", Toast.LENGTH_LONG).show();
             } catch (IOException e) {
                 Toast.makeText(getApplicationContext(), "Error!", Toast.LENGTH_LONG).show();
-                Log.d("BOBScout", e.getMessage());
             }
 
         }

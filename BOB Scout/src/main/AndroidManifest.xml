@@ -37,7 +37,6 @@
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -45,7 +44,13 @@
             android:name=".ScoutTeam"
             android:parentActivityName=".Start"
             android:screenOrientation="portrait" />
-        <activity android:name=".SubmitTeam"></activity>
+        <activity
+            android:name=".SubmitTeam"
+            android:parentActivityName=".ScoutTeam"/>
+        <activity
+            android:name=".ViewTeams"
+            android:parentActivityName=".Start">
+        </activity>
     </application>
 
 </manifest>

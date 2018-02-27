@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.craig.bobscout.ViewMatches">
+    tools:context="com.example.craig.bobscout.ViewTeams">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -26,10 +26,8 @@
                     android:id="@+id/display"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-
             </LinearLayout>
 
         </ScrollView>
     </RelativeLayout>
-
 </android.support.constraint.ConstraintLayout>

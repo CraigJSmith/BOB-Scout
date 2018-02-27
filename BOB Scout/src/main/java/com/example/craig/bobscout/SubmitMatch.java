@@ -24,7 +24,6 @@ public class SubmitMatch extends AppCompatActivity {
     private String data;
     private String matchNum;
     private String teamNum;
-
     private String output;
 
     @Override
@@ -32,7 +31,7 @@ public class SubmitMatch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_submit);
 
-        dataOutput = (TextView) findViewById(R.id.dataOutput);
+        dataOutput = findViewById(R.id.dataOutput);
         dataOutput.setMovementMethod(new ScrollingMovementMethod());
 
         Bundle extras = getIntent().getExtras();
@@ -41,7 +40,6 @@ public class SubmitMatch extends AppCompatActivity {
         autoCubeSwitch = extras.getBoolean("EXTRA_AUTO_SWITCH");
         autoCubeScale = extras.getBoolean("EXTRA_AUTO_SCALE");
         autoCubePickup = extras.getBoolean("EXTRA_AUTO_PICKUP");
-
         matchNum = extras.getString("EXTRA_MATCH");
         teamNum = extras.getString("EXTRA_TEAM");
         data = extras.getString("EXTRA_DATA");
@@ -49,7 +47,7 @@ public class SubmitMatch extends AppCompatActivity {
         output = matchNum + "@" + teamNum + "," + autoLine + ":" + autoCubeSwitch + ":" + autoCubeScale + ":" + autoCubePickup + "," + data;
 
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
-            File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout");
+            File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/Matches/");
             dir.mkdirs();
             File file = new File(dir, matchNum + "_" + teamNum + ".csv");
 
