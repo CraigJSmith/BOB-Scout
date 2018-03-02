@@ -18,83 +18,294 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textTeamName"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Team Name"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/teamName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="text" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textTeamNum"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Team Number"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/teamNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_height="50dp"
                     android:layout_weight="1" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Team Number"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/teamNum"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/textDriveTrain"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Drive Train Type"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/driveTrain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" />
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/textIntake"
+                        android:layout_width="435dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Intake Type"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                    <RadioGroup
+                        android:id="@+id/intakeType"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
+                        <RadioButton
+                            android:id="@+id/intakeActive"
+                            android:layout_width="1/3dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Active" />
+
+                        <RadioButton
+                            android:id="@+id/intakePassive"
+                            android:layout_width="1/3dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Passive" />
+
+                        <RadioButton
+                            android:id="@+id/intakeNone"
+                            android:layout_width="1/3dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="None" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Team Name"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/teamName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/textPreferredStarting"
+                        android:layout_width="435dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Preferred Starting"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <RadioGroup
+                        android:id="@+id/preferredStarting"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/startLeft"
+                            android:layout_width="1/3dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Left" />
+
+                        <RadioButton
+                            android:id="@+id/startCenter"
+                            android:layout_width="1/3dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Center" />
+
+                        <RadioButton
+                            android:id="@+id/startRight"
+                            android:layout_width="1/3dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Right" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="text" />
+                    android:orientation="horizontal">
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/textAuto"
+                        android:layout_width="435dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Auto"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                    <RadioGroup
+                        android:id="@+id/intakeType"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
+                        <RadioButton
+                            android:id="@+id/autoCross"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Cross" />
+
+                        <RadioButton
+                            android:id="@+id/autoSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Switch" />
+
+                        <RadioButton
+                            android:id="@+id/autoScale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Scale" />
+
+                        <RadioButton
+                            android:id="@+id/autoPickup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Pickup" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Team Age (years)"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/teamAge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    <TextView
+                        android:id="@+id/textExtraHuman"
+                        android:layout_width="435dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Extra Human"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <RadioGroup
+                        android:id="@+id/extraHuman"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/extraHumanYes"
+                            android:layout_width="1/2dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/extraHumanNo"
+                            android:layout_width="1/2dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" />
+                    android:orientation="vertical">
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -113,105 +324,206 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Drive Train Type"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/driveTrain"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="text" />
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/textClimb"
+                        android:layout_width="435dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Climb"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
+                    <RadioGroup
+                        android:id="@+id/climb"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="435dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Climb"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
+                        <RadioButton
+                            android:id="@+id/climbYes"
+                            android:layout_width="1/3dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Yes" />
 
-                <RadioGroup
-                    android:id="@+id/climb"
+                        <RadioButton
+                            android:id="@+id/climbNo"
+                            android:layout_width="1/3dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textClimbOthers"
+                        android:layout_width="435dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Climb Others"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <RadioGroup
+                        android:id="@+id/climbOthers"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/climbOthersYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/climbOthersNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textSwitch"
+                        android:layout_width="435dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Place on Switch"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <RadioGroup
+                        android:id="@+id/switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/switchYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/switchNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
-                    <RadioButton
-                        android:id="@+id/climbYes"
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/textScale"
+                        android:layout_width="435dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Yes" />
+                        android:text="Place on Scale"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
 
-                    <RadioButton
-                        android:id="@+id/climbNo"
-                        android:layout_width="wrap_content"
+                    <RadioGroup
+                        android:id="@+id/scale"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/scaleYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/scaleNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textEx"
+                        android:layout_width="435dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="No" />
-                </RadioGroup>
+                        android:text="Use Exchange"
+                        android:textAlignment="center"
+                        android:textSize="18sp" />
+
+                    <RadioGroup
+                        android:id="@+id/ex"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/exYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/exNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No" />
+                    </RadioGroup>
+
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="435dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Climb Others"
-                    android:textAlignment="center"
-                    android:textSize="18sp" />
-
-                <RadioGroup
-                    android:id="@+id/climbOthers"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/climbOthersYes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Yes" />
-
-                    <RadioButton
-                        android:id="@+id/climbOthersNo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="No" />
-                </RadioGroup>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <Space

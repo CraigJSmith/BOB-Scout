@@ -33,6 +33,7 @@ public class ScoutTeam extends AppCompatActivity {
         climb = findViewById(R.id.climb);
         climbOthers = findViewById(R.id.climbOthers);
         submit = findViewById(R.id.submit);
+        View selectedView = (View)findViewById( selectedID);
     }
 
     public void submit(View v) {
