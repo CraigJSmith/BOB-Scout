@@ -21,6 +21,7 @@ public class SubmitTeam extends AppCompatActivity {
     private String teamName;
     private String teamAge;
     private String driveTrain;
+    private String climb;
     private String output;
 
     @Override
@@ -32,10 +33,10 @@ public class SubmitTeam extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         teamNum = extras.getString("TEAM_NUM");
         teamName = extras.getString("TEAM_NAME");
-        teamAge = extras.getString("TEAM_NUM");
         driveTrain = extras.getString("TEAM_AGE");
+        climb = extras.getString("CLIMB");
 
-        output = teamNum + "," + teamName + "," + teamAge + "," + driveTrain;
+        output = teamNum + "," + teamName + "," + climb + "," + driveTrain;
 
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/Teams/");

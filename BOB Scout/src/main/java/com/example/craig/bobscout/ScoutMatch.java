@@ -27,8 +27,8 @@ public class ScoutMatch extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
-        matchNum = extras.getString("EXTRA_MATCH");
-        teamNum = extras.getString("EXTRA_TEAM");
+        matchNum = extras.getString("MATCH");
+        teamNum = extras.getString("TEAM");
         startTime = System.currentTimeMillis();
         data = "";
         started = false;
@@ -66,18 +66,11 @@ public class ScoutMatch extends AppCompatActivity {
         buttons.add(findViewById(R.id.p_b1));
         buttons.add(findViewById(R.id.ex_b));
         buttons.add(findViewById(R.id.p_b2));
+
+        start();
     }
 
-    public void startAndStopButton(View v) {
-        started = !started;
-        if(started) {
-            start(v);
-        } else {
-            stop(v);
-        }
-    }
-
-    public void start(View v) {
+    public void start() {
         enableButtons(true);
         startTime = System.currentTimeMillis();
     }
@@ -86,11 +79,11 @@ public class ScoutMatch extends AppCompatActivity {
         enableButtons(false);
         saveData();
 
-        Intent intent = new Intent(this, SubmitMatch.class);
+        Intent intent = new Intent(this, ScoutMatchEnd.class);
         Bundle extras = getIntent().getExtras();
-        extras.putString("EXTRA_MATCH", matchNum);
-        extras.putString("EXTRA_TEAM", teamNum);
-        extras.putString("EXTRA_DATA", data);
+        extras.putString("MATCH", matchNum);
+        extras.putString("TEAM", teamNum);
+        extras.putString("DATA", data);
         intent.putExtras(extras);
         startActivity(intent);
     }
@@ -116,7 +109,7 @@ public class ScoutMatch extends AppCompatActivity {
 
     public void saveData() {
         for (Action a : actions) {
-            data += a.getType() + ":" + a.getTime() +",";
+            data += a.getType() + ":" + a.getTime() +"\n";
         }
     }
 }

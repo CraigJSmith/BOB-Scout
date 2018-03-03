@@ -339,9 +339,9 @@
                         android:layout_weight="1"
                         android:background="#263238 "
                         android:enabled="true"
-                        android:onClick="startAndStopButton"
+                        android:onClick="stop"
                         android:textColor="@android:color/white"
-                        android:textOff="Start"
+                        android:textOff="Stop"
                         android:textOn="Stop" />
 
                     <Space

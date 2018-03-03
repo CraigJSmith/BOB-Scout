@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.craig.bobscout.ScoutMatchEnd"
+    tools:layout_editor_absoluteY="89dp">
+
+    <ToggleButton
+        android:id="@+id/climbedOthers"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="23dp"
+        android:text="Climbed Others"
+        android:textOff="Climbed Others"
+        android:textOn="Climbed Others"
+        app:layout_constraintEnd_toStartOf="@+id/droppedOthers"
+        app:layout_constraintStart_toEndOf="@+id/failedClimb"
+        app:layout_constraintTop_toBottomOf="@+id/unusualMatch" />
+
+    <ToggleButton
+        android:id="@+id/failedClimb"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="171dp"
+        android:layout_marginTop="1dp"
+        android:text="Failed Climb"
+        android:textOff="Failed Climb"
+        android:textOn="Failed Climb"
+        app:layout_constraintEnd_toStartOf="@+id/climbedOthers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/climbedOthers" />
+
+    <ToggleButton
+        android:id="@+id/droppedOthers"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="156dp"
+        android:text="Dropped Others"
+        android:textOff="Dropped Others"
+        android:textOn="Dropped Others"
+        app:layout_constraintBaseline_toBaselineOf="@+id/climbedOthers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/climbedOthers" />
+
+    <ToggleButton
+        android:id="@+id/damagedDrivetrain"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="272dp"
+        android:text="Damaged Drivetrain"
+        android:textOff="Damaged Drivetrain"
+        android:textOn="Damaged Drivetrain"
+        app:layout_constraintBaseline_toBaselineOf="@+id/damagedIntake"
+        app:layout_constraintEnd_toStartOf="@+id/damagedIntake"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/damagedIntake"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="271dp"
+        android:text="Damaged Intake"
+        android:textOff="Damaged Intake"
+        android:textOn="Damaged Intake"
+        app:layout_constraintBottom_toTopOf="@+id/playedDefense"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/damagedDrivetrain" />
+
+    <ToggleButton
+        android:id="@+id/unusualMatch"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="Unusual Match"
+        android:textOff="Unusual Match"
+        android:textOn="Unusual Match"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/messedUp" />
+
+    <ToggleButton
+        android:id="@+id/messedUp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="I messed up (Discard data)"
+        android:textOff="I messed up (Discard data)"
+        android:textOn="I messed up (Discard data)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/playedDefense"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:text="Played Defense"
+        android:textOff="Played Defense"
+        android:textOn="Played Defense"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toStartOf="@+id/damagedIntake"
+        app:layout_constraintStart_toStartOf="@+id/damagedIntake" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:layout_marginStart="55dp"
+        android:onClick="submit"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/playedDefense" />
+</android.support.constraint.ConstraintLayout>

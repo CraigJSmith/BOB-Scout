@@ -62,8 +62,8 @@ public class ScoutMatchSetup extends AppCompatActivity {
     private void begin() {
         Intent intent = new Intent(this, ScoutAuto.class);
         Bundle extras = new Bundle();
-        extras.putString("EXTRA_MATCH", matchNum);
-        extras.putString("EXTRA_TEAM", teamNum);
+        extras.putString("MATCH", matchNum);
+        extras.putString("TEAM", teamNum);
         intent.putExtras(extras);
 
         startActivity(intent);

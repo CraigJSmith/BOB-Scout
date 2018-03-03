@@ -47,7 +47,7 @@ public class ViewMatches extends AppCompatActivity {
 
         matchList += "<style>table { border-collapse: collapse } table, th, td { border: 1px solid black; text-align: center }</style>";
         if(!matches.isEmpty()) {
-            matchList += "<table style=\"width:100%\"> <tr> <th>Match</th> <th>Teams</th> </tr>";
+            matchList += "<table style=\"width:100%\"> <tr> <th>Match</th> <th>Team(s)</th> </tr>";
             for (int i = 1; i <= max(matches.keySet()); i++) {
                 matchList += "<tr> <td>" + i + "</td> <td>";
                 if (matches.keySet().contains(i)) {

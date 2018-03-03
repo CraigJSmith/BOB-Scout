@@ -31,10 +31,10 @@ public class ScoutAuto extends AppCompatActivity {
         Intent intent = new Intent(this, ScoutMatch.class);
 
         Bundle extras = getIntent().getExtras();
-        extras.putBoolean("EXTRA_AUTO_CROSS", autoCross.isChecked());
-        extras.putBoolean("EXTRA_AUTO_SWITCH", cubeSwitch.isChecked());
-        extras.putBoolean("EXTRA_AUTO_SCALE", cubeScale.isChecked());
-        extras.putBoolean("EXTRA_AUTO_PICKUP", cubePickup.isChecked());
+        extras.putBoolean("AUTO_CROSS", autoCross.isChecked());
+        extras.putBoolean("AUTO_SWITCH", cubeSwitch.isChecked());
+        extras.putBoolean("AUTO_SCALE", cubeScale.isChecked());
+        extras.putBoolean("AUTO_PICKUP", cubePickup.isChecked());
         intent.putExtras(extras);
 
         startActivity(intent);

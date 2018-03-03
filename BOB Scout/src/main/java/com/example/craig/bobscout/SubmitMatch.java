@@ -8,6 +8,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -16,12 +17,19 @@ import java.io.IOException;
 public class SubmitMatch extends AppCompatActivity {
 
     private TextView dataOutput;
-    private boolean autoLine;
+    private boolean autoCross;
     private boolean autoCubeSwitch;
     private boolean autoCubeScale;
     private boolean autoCubePickup;
+    private boolean messedUp;
+    private boolean unusualMatch;
+    private boolean failedClimb;
+    private boolean climbedOthers;
+    private boolean droppedOthers;
+    private boolean damagedDrivetrain;
+    private boolean damagedIntake;
+    private boolean playedDefense;
 
-    private String data;
     private String matchNum;
     private String teamNum;
     private String output;
@@ -36,15 +44,48 @@ public class SubmitMatch extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        autoLine = extras.getBoolean("EXTRA_AUTO_CROSS");
-        autoCubeSwitch = extras.getBoolean("EXTRA_AUTO_SWITCH");
-        autoCubeScale = extras.getBoolean("EXTRA_AUTO_SCALE");
-        autoCubePickup = extras.getBoolean("EXTRA_AUTO_PICKUP");
-        matchNum = extras.getString("EXTRA_MATCH");
-        teamNum = extras.getString("EXTRA_TEAM");
-        data = extras.getString("EXTRA_DATA");
+        // Match Setup
+        matchNum = extras.getString("MATCH");
+        teamNum = extras.getString("TEAM");
 
-        output = matchNum + "@" + teamNum + "," + autoLine + ":" + autoCubeSwitch + ":" + autoCubeScale + ":" + autoCubePickup + "," + data;
+        // Auto
+        autoCross = extras.getBoolean("AUTO_CROSS");
+        autoCubeSwitch = extras.getBoolean("AUTO_SWITCH");
+        autoCubeScale = extras.getBoolean("AUTO_SCALE");
+        autoCubePickup = extras.getBoolean("AUTO_PICKUP");
+
+        // Teleop
+        String teleop = extras.getString("DATA");
+
+        // End
+        messedUp = extras.getBoolean("MESSED_UP");
+        unusualMatch = extras.getBoolean("UNUSUAL_MATCH");
+        failedClimb = extras.getBoolean("FAILED_CLIMB");
+        climbedOthers = extras.getBoolean("CLIMBED_OTHERS");
+        droppedOthers = extras.getBoolean("DROPPED_OTHERS");
+        damagedDrivetrain = extras.getBoolean("DAMAGED_DRIVETRAIN");
+        damagedIntake = extras.getBoolean("DAMAGED_INTAKE");
+        playedDefense = extras.getBoolean("PLAYED_DEFENSE");
+
+        String discard = String.valueOf(messedUp) + "\n";
+
+        String setup = matchNum + "@" + teamNum + "\n";
+
+        String auto = String.valueOf(autoCross) + "," +
+                      String.valueOf(autoCubeSwitch) + "," +
+                      String.valueOf(autoCubeScale) + "," +
+                      String.valueOf(autoCubePickup) + "\n";
+
+        String end = String.valueOf(unusualMatch) + "," +
+                     String.valueOf(failedClimb) + "," +
+                     String.valueOf(climbedOthers) + "," +
+                     String.valueOf(droppedOthers) + "," +
+                     String.valueOf(damagedDrivetrain) + "," +
+                     String.valueOf(damagedIntake) + "," +
+                     String.valueOf(playedDefense) + "\n";
+
+
+        output = discard + setup + auto + end + teleop;
 
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/Matches/");
