@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 public class ScoutAuto extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class ScoutAuto extends AppCompatActivity {
     private ToggleButton cubeSwitch;
     private ToggleButton cubeScale;
     private ToggleButton cubePickup;
+    private TextView currentlyScouting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,10 @@ public class ScoutAuto extends AppCompatActivity {
         cubeSwitch = findViewById(R.id.cubeSwitch);
         cubeScale = findViewById(R.id.cubeScale);
         cubePickup = findViewById(R.id.cubePickup);
+        currentlyScouting = findViewById(R.id.currentlyScouting);
 
+        Bundle extras = getIntent().getExtras();
+        currentlyScouting.setText("You are scouting team " + extras.get("TEAM") + " in match " + extras.get("MATCH"));
     }
 
     public void startTeleop(View v) {
