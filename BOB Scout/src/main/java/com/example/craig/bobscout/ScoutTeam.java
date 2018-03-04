@@ -15,6 +15,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
 public class ScoutTeam extends AppCompatActivity {
@@ -44,15 +45,13 @@ public class ScoutTeam extends AppCompatActivity {
     }
 
     public void submit(View v) {
-
-        if(teamNum.getText().equals(null)) {
+        if(teamNum.getText().toString().equals("")) {
             AlertDialog alertDialog = new AlertDialog.Builder(this).create();
             alertDialog.setTitle("No team number");
             alertDialog.setMessage("You must enter a team number.");
-
-            alertDialog.setButton(Dialog.BUTTON_NEGATIVE, "okie, soz m8", new DialogInterface.OnClickListener() {
+            alertDialog.setButton(Dialog.BUTTON_NEUTRAL,"OKIE SORRY", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
-                    // nothing
+                    //nothing
                 }
             });
             alertDialog.show();
@@ -64,8 +63,12 @@ public class ScoutTeam extends AppCompatActivity {
             extras.putString("TEAM_NAME", teamName.getText().toString());
             extras.putString("DRIVE_TRAIN", driveTrain.getText().toString());
 
-            RadioButton climbStatus = climb.findViewById(climb.getCheckedRadioButtonId());
-            extras.putString("CLIMB", climbStatus.getText().toString());
+            try {
+                RadioButton climbStatus = climb.findViewById(climb.getCheckedRadioButtonId());
+                extras.putString("CLIMB", climbStatus.getText().toString());
+            } catch(NullPointerException e) {
+                extras.putString("CLIMB", "na");
+            }
 
             intent.putExtras(extras);
             startActivity(intent);

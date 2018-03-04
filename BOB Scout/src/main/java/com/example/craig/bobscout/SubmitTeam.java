@@ -33,10 +33,9 @@ public class SubmitTeam extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         teamNum = extras.getString("TEAM_NUM");
         teamName = extras.getString("TEAM_NAME");
-        driveTrain = extras.getString("TEAM_AGE");
         climb = extras.getString("CLIMB");
 
-        output = teamNum + "," + teamName + "," + climb + "," + driveTrain;
+        output = teamNum + "," + teamName + "," + climb + ",";
 
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/Teams/");
