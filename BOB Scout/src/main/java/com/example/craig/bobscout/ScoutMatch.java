@@ -1,6 +1,7 @@
 package com.example.craig.bobscout;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,10 +16,11 @@ public class ScoutMatch extends AppCompatActivity {
     private String teamNum;
     private static long startTime;
     private String data;
-    private boolean started;
+    private boolean redLeft;
     private ArrayList<Action> actions;
-    private ArrayList<View> buttons;
+    private ArrayList<View> buttons, buttonsLeft, buttonsRight;
     private View prevButton;
+    private Button p_l1,ex_l,p_l2,cp_l,sw_l1,sw_l2,c_1,c_2,c_3,sc_1,fpickup,startstop,fdrop,sc_2,c_4,c_5,c_6,sw_r1,sw_r2,cp_r,p_r1,ex_r,p_r2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,54 +31,80 @@ public class ScoutMatch extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         matchNum = extras.getString("MATCH");
         teamNum = extras.getString("TEAM");
+        redLeft = extras.getBoolean("REDLEFT");
         startTime = System.currentTimeMillis();
         data = "";
-        started = false;
         actions = new ArrayList<Action>();
+
         buttons = new ArrayList<View>();
+        buttonsLeft = new ArrayList<View>();
+        buttonsRight = new ArrayList<View>();
 
-        buttons.add(findViewById(R.id.p_r1));
-        buttons.add(findViewById(R.id.ex_r));
-        buttons.add(findViewById(R.id.p_r2));
+        p_l1 = findViewById(R.id.p_l1);
+        ex_l = findViewById(R.id.ex_l);
+        p_l2 = findViewById(R.id.p_l2);
 
-        buttons.add(findViewById(R.id.cp_r));
+        cp_l = findViewById(R.id.cp_l);
 
-        buttons.add(findViewById(R.id.sw_r1));
-        buttons.add(findViewById(R.id.sw_r2));
+        sw_l1 = findViewById(R.id.sw_l1);
+        sw_l2 = findViewById(R.id.sw_l2);
 
-        buttons.add(findViewById(R.id.c_1));
-        buttons.add(findViewById(R.id.c_2));
-        buttons.add(findViewById(R.id.c_3));
+        c_1 = findViewById(R.id.c_1);
+        c_2 = findViewById(R.id.c_2);
+        c_3 = findViewById(R.id.c_3);
 
-        buttons.add(findViewById(R.id.sc_1));
-        buttons.add(findViewById(R.id.fpickup));
-        buttons.add(findViewById(R.id.startstop));
-        buttons.add(findViewById(R.id.fdrop));
-        buttons.add(findViewById(R.id.sc_2));
+        sc_1 = findViewById(R.id.sc_1);
+        fpickup = findViewById(R.id.fpickup);
+        startstop = findViewById(R.id.startstop);
+        fdrop = findViewById(R.id.fdrop);
+        sc_2 = findViewById(R.id.sc_2);
 
-        buttons.add(findViewById(R.id.c_4));
-        buttons.add(findViewById(R.id.c_5));
-        buttons.add(findViewById(R.id.c_6));
+        c_4 = findViewById(R.id.c_4);
+        c_5 = findViewById(R.id.c_5);
+        c_6 = findViewById(R.id.c_6);
 
-        buttons.add(findViewById(R.id.sw_b1));
-        buttons.add(findViewById(R.id.sw_b2));
+        sw_r1 = findViewById(R.id.sw_r1);
+        sw_r2 = findViewById(R.id.sw_r2);
 
-        buttons.add(findViewById(R.id.cp_b));
+        cp_r = findViewById(R.id.cp_r);
 
-        buttons.add(findViewById(R.id.p_b1));
-        buttons.add(findViewById(R.id.ex_b));
-        buttons.add(findViewById(R.id.p_b2));
+        p_r1 = findViewById(R.id.p_r1);
+        ex_r = findViewById(R.id.ex_r);
+        p_r2 = findViewById(R.id.p_r2);
+
+        buttonsLeft.add(p_l1);
+        buttonsLeft.add(ex_l);
+        buttonsLeft.add(p_l2);
+        buttonsLeft.add(sw_l1);
+        buttonsLeft.add(sw_l2);
+
+        buttons.add(c_1);
+        buttons.add(c_2);
+        buttons.add(c_3);
+        buttons.add(sc_1);
+        buttons.add(fpickup);
+        buttons.add(startstop);
+        buttons.add(fdrop);
+        buttons.add(sc_2);
+        buttons.add(c_4);
+        buttons.add(c_5);
+        buttons.add(c_6);
+
+        buttonsRight.add(sw_r1);
+        buttonsRight.add(sw_r2);
+        buttonsRight.add(p_r1);
+        buttonsRight.add(ex_r);
+        buttonsRight.add(p_r2);
 
         start();
     }
 
     public void start() {
-        enableButtons(true);
+        setupButtons(redLeft);
         startTime = System.currentTimeMillis();
     }
 
     public void stop(View v) {
-        enableButtons(false);
         saveData();
 
         Intent intent = new Intent(this, ScoutMatchEnd.class);
@@ -86,13 +114,6 @@ public class ScoutMatch extends AppCompatActivity {
         extras.putString("DATA", data);
         intent.putExtras(extras);
         startActivity(intent);
-    }
-
-    private void enableButtons(boolean enabled) {
-        for(View button : buttons){
-            if(button instanceof Button)
-                button.setEnabled(enabled);
-        }
     }
 
     public void addAction(View v) {
@@ -110,6 +131,59 @@ public class ScoutMatch extends AppCompatActivity {
     public void saveData() {
         for (Action a : actions) {
             data += a.getType() + ":" + a.getTime() +"\n";
+        }
+    }
+
+    public void setupButtons(boolean leftRed) {
+        if(leftRed) {
+            for(View v : buttonsLeft) {
+                Button b = (Button) v;
+                b.setBackground(getResources().getDrawable(R.drawable.redscoutbutton));
+            }
+
+            for(View v : buttonsRight) {
+                Button b = (Button) v;
+                b.setBackground(getResources().getDrawable(R.drawable.bluescoutbutton));
+            }
+
+            p_l1.setTag("p_r1");
+            p_l2.setTag("p_r2");
+            ex_l.setTag("ex_r");
+            cp_l.setTag("cp_r");
+            sw_l1.setTag("sw_r1");
+            sw_l2.setTag("sw_r2");
+
+            sw_r1.setTag("sw_b1");
+            sw_r2.setTag("sw_b2");
+            cp_r.setTag("cp_b");
+            p_r1.setTag("p_b1");
+            ex_r.setTag("ex_b");
+            p_r2.setTag("p_rb2");
+
+        } else {
+            for(View v : buttonsLeft) {
+                Button b = (Button) v;
+                b.setBackground(getResources().getDrawable(R.drawable.bluescoutbutton));
+            }
+
+            for(View v : buttonsRight) {
+                Button b = (Button) v;
+                b.setBackground(getResources().getDrawable(R.drawable.redscoutbutton));
+            }
+
+            p_l1.setTag("p_b1");
+            p_l2.setTag("p_b2");
+            ex_l.setTag("ex_b");
+            cp_l.setTag("cp_b");
+            sw_l1.setTag("sw_b1");
+            sw_l2.setTag("sw_b2");
+
+            sw_r1.setTag("sw_r1");
+            sw_r2.setTag("sw_r2");
+            cp_r.setTag("cp_r");
+            p_r1.setTag("p_r1");
+            ex_r.setTag("ex_r");
+            p_r2.setTag("p_r2");
         }
     }
 }

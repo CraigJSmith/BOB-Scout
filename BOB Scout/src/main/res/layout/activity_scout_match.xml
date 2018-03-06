@@ -30,12 +30,12 @@
                     android:orientation="vertical">
 
                     <ToggleButton
-                        android:id="@+id/p_r1"
+                        android:id="@+id/p_l1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/redscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="p_r1"
                         android:text="Portal"
@@ -48,12 +48,12 @@
                         android:layout_weight="1" />
 
                     <ToggleButton
-                        android:id="@+id/ex_r"
+                        android:id="@+id/ex_l"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/redscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="ex_r"
                         android:text="Ex"
@@ -66,12 +66,12 @@
                         android:layout_weight="1" />
 
                     <ToggleButton
-                        android:id="@+id/p_r2"
+                        android:id="@+id/p_l2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/redscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="p_r2"
                         android:text="Portal"
@@ -117,12 +117,12 @@
                                 android:layout_weight="1" />
 
                             <ToggleButton
-                                android:id="@+id/cp_r"
+                                android:id="@+id/cp_l"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:background="@drawable/yellowscoutbutton"
-                                android:enabled="false"
+                                android:enabled="true"
                                 android:onClick="addAction"
                                 android:tag="cp_r"
                                 android:text=" "
@@ -159,12 +159,12 @@
                         android:layout_weight="1" />
 
                     <ToggleButton
-                        android:id="@+id/sw_r1"
+                        android:id="@+id/sw_l1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/redscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="sw_r1"
                         android:text="Switch"
@@ -177,12 +177,12 @@
                         android:layout_weight="1" />
 
                     <ToggleButton
-                        android:id="@+id/sw_r2"
+                        android:id="@+id/sw_l2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/redscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="sw_r2"
                         android:text="Switch"
@@ -225,7 +225,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/yellowscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="c_1"
                         android:text=" "
@@ -243,7 +243,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/yellowscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="c_2"
                         android:text=" "
@@ -261,7 +261,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/yellowscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="c_3"
                         android:text=" "
@@ -302,7 +302,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/grayscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="sc_1"
                         android:text="Scale"
@@ -320,7 +320,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1"
                         android:background="@drawable/greenscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="fpickup"
                         android:text="Pickup"
@@ -355,7 +355,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1"
                         android:background="@drawable/greenscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="fdrop"
                         android:text="Drop"
@@ -373,7 +373,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/grayscoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="sc_2"
                         android:text="Scale"
@@ -420,7 +420,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/yellowscoutbutton"
-                            android:enabled="false"
+                            android:enabled="true"
                             android:onClick="addAction"
                             android:tag="c_4"
                             android:text=" "
@@ -438,7 +438,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/yellowscoutbutton"
-                            android:enabled="false"
+                            android:enabled="true"
                             android:onClick="addAction"
                             android:tag="c_5"
                             android:text=" "
@@ -456,7 +456,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/yellowscoutbutton"
-                            android:enabled="false"
+                            android:enabled="true"
                             android:onClick="addAction"
                             android:tag="c_6"
                             android:text=" "
@@ -495,12 +495,12 @@
                         android:layout_weight="1" />
 
                     <ToggleButton
-                        android:id="@+id/sw_b1"
+                        android:id="@+id/sw_r1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/bluescoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="sw_b1"
                         android:text="Switch"
@@ -513,12 +513,12 @@
                         android:layout_weight="1" />
 
                     <ToggleButton
-                        android:id="@+id/sw_b2"
+                        android:id="@+id/sw_r2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/bluescoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="sw_b2"
                         android:text="Switch"
@@ -562,12 +562,12 @@
                                 android:layout_weight="1" />
 
                             <ToggleButton
-                                android:id="@+id/cp_b"
+                                android:id="@+id/cp_r"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:background="@drawable/yellowscoutbutton"
-                                android:enabled="false"
+                                android:enabled="true"
                                 android:onClick="addAction"
                                 android:tag="cp_b"
                                 android:text=" "
@@ -604,12 +604,12 @@
                     android:orientation="vertical">
 
                     <ToggleButton
-                        android:id="@+id/p_b1"
+                        android:id="@+id/p_r1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/bluescoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="p_b1"
                         android:text="Portal"
@@ -622,12 +622,12 @@
                         android:layout_weight="1" />
 
                     <ToggleButton
-                        android:id="@+id/ex_b"
+                        android:id="@+id/ex_r"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/bluescoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="ex_b"
                         android:text="Ex"
@@ -640,12 +640,12 @@
                         android:layout_weight="1" />
 
                     <ToggleButton
-                        android:id="@+id/p_b2"
+                        android:id="@+id/p_r2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@drawable/bluescoutbutton"
-                        android:enabled="false"
+                        android:enabled="true"
                         android:onClick="addAction"
                         android:tag="p_b2"
                         android:text="Portal"
