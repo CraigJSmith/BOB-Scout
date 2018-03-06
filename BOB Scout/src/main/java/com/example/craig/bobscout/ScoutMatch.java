@@ -20,7 +20,7 @@ public class ScoutMatch extends AppCompatActivity {
     private ArrayList<Action> actions;
     private ArrayList<View> buttons, buttonsLeft, buttonsRight;
     private View prevButton;
-    private Button p_l1,ex_l,p_l2,cp_l,sw_l1,sw_l2,c_1,c_2,c_3,sc_1,fpickup,startstop,fdrop,sc_2,c_4,c_5,c_6,sw_r1,sw_r2,cp_r,p_r1,ex_r,p_r2;
+    private Button p_l1,ex_l,p_l2,cp_l,sw_l1,sw_l2,c_1,c_2,c_3,sc_1,fpickup,startstop,fdrop,sc_2,c_4,c_5,c_6,sw_r1,sw_r2,cp_r,p_r1,ex_r,p_r2,climb_l,climb_r;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,7 @@ public class ScoutMatch extends AppCompatActivity {
         cp_l = findViewById(R.id.cp_l);
 
         sw_l1 = findViewById(R.id.sw_l1);
+        climb_l = findViewById(R.id.climb_l);
         sw_l2 = findViewById(R.id.sw_l2);
 
         c_1 = findViewById(R.id.c_1);
@@ -64,6 +65,7 @@ public class ScoutMatch extends AppCompatActivity {
         c_6 = findViewById(R.id.c_6);
 
         sw_r1 = findViewById(R.id.sw_r1);
+        climb_r = findViewById(R.id.climb_r);
         sw_r2 = findViewById(R.id.sw_r2);
 
         cp_r = findViewById(R.id.cp_r);
@@ -112,6 +114,25 @@ public class ScoutMatch extends AppCompatActivity {
         extras.putString("MATCH", matchNum);
         extras.putString("TEAM", teamNum);
         extras.putString("DATA", data);
+        extras.putLong("STARTTIME", startTime);
+        intent.putExtras(extras);
+        startActivity(intent);
+    }
+
+    public void climb(View v) {
+        long time = System.currentTimeMillis() - startTime;
+        String action = v.getTag().toString();
+        Action a = new Action(action, time);
+        actions.add(a);
+
+        saveData();
+
+        Intent intent = new Intent(this, ScoutMatchClimb.class);
+        Bundle extras = getIntent().getExtras();
+        extras.putString("MATCH", matchNum);
+        extras.putString("TEAM", teamNum);
+        extras.putString("DATA", data);
+        extras.putLong("STARTTIME", startTime);
         intent.putExtras(extras);
         startActivity(intent);
     }

@@ -56,6 +56,7 @@ public class SubmitMatch extends AppCompatActivity {
 
         // Teleop
         String teleop = extras.getString("DATA");
+        String climb = extras.getString("CLIMBDATA");
 
         // End
         messedUp = extras.getBoolean("MESSED_UP");
@@ -85,7 +86,11 @@ public class SubmitMatch extends AppCompatActivity {
                      String.valueOf(playedDefense) + "\n";
 
 
-        output = discard + setup + auto + end + teleop;
+        output = discard + setup + auto + end + teleop + climb;
+
+//        if(!climb.equals(null) && !climb.equals("")) {
+//            output += climb;
+//        }
 
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/Matches/");

@@ -2,9 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.craig.bobscout">
 
+    <uses-sdk android:minSdkVersion="16" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-sdk android:minSdkVersion="16"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -50,8 +52,12 @@
             android:parentActivityName=".ScoutTeam" />
         <activity
             android:name=".ViewTeams"
-            android:parentActivityName=".Start"></activity>
+            android:parentActivityName=".Start" />
         <activity android:name=".ScoutMatchEnd">
+            android:screenOrientation="landscape"
+            android:parentActivityName=".ScoutMatch"
+        </activity>
+        <activity android:name=".ScoutMatchClimb">
             android:screenOrientation="landscape"
             android:parentActivityName=".ScoutMatch"
         </activity>
