@@ -77,16 +77,10 @@ public class SubmitMatch extends AppCompatActivity {
                       String.valueOf(autoCubeScale) + "," +
                       String.valueOf(autoCubePickup) + "\n";
 
-        String end = String.valueOf(unusualMatch) + "," +
-                     String.valueOf(failedClimb) + "," +
-                     String.valueOf(climbedOthers) + "," +
-                     String.valueOf(droppedOthers) + "," +
-                     String.valueOf(damagedDrivetrain) + "," +
-                     String.valueOf(damagedIntake) + "," +
-                     String.valueOf(playedDefense) + "\n";
+        String end = extras.getString("END");
 
-
-        output = discard + setup + auto + end + teleop + climb;
+        output = teleop + end;
+       //output = discard + setup + auto + end + teleop + climb;
 
 //        if(!climb.equals(null) && !climb.equals("")) {
 //            output += climb;

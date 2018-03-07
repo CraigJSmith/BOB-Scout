@@ -150,8 +150,19 @@ public class ScoutMatch extends AppCompatActivity {
     }
 
     public void saveData() {
+        Bundle extras = getIntent().getExtras();
+        String match = extras.getString("MATCH");
+        String team = extras.getString("TEAM");
+        boolean aCross = extras.getBoolean("AUTO_CROSS");
+        boolean aSwitch = extras.getBoolean("AUTO_SWITCH");
+        boolean aScale = extras.getBoolean("AUTO_SCALE");
+        boolean aPickup = extras.getBoolean("AUTO_PICKUP");
+
         for (Action a : actions) {
-            data += a.getType() + ":" + a.getTime() +"\n";
+            data += match + "," + team + "," + aCross + "," + aSwitch + "," + aScale + "," + aPickup + ",";
+            data += a.getType() + "," + a.getTime();
+            data += "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null";
+            data += "\n";
         }
     }
 

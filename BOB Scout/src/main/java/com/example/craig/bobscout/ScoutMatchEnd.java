@@ -38,14 +38,29 @@ public class ScoutMatchEnd extends AppCompatActivity {
         Intent intent = new Intent(this, SubmitMatch.class);
         Bundle extras = getIntent().getExtras();
 
-        extras.putBoolean("MESSED_UP", messedUp.isChecked());
-        extras.putBoolean("UNUSUAL_MATCH", unusualMatch.isChecked());
-        extras.putBoolean("FAILED_CLIMB", failedClimb.isChecked());
-        extras.putBoolean("CLIMBED_OTHERS", climbedOthers.isChecked());
-        extras.putBoolean("DROPPED_OTHERS", droppedOthers.isChecked());
-        extras.putBoolean("DAMAGED_DRIVETRAIN", damagedDrivetrain.isChecked());
-        extras.putBoolean("DAMAGED_INTAKE", damagedIntake.isChecked());
-        extras.putBoolean("PLAYED_DEFENSE", playedDefense.isChecked());
+        boolean discard = messedUp.isChecked();
+        boolean unusual = unusualMatch.isChecked();
+        boolean climbFailed = failedClimb.isChecked();
+        boolean climbOthers = climbedOthers.isChecked();
+        boolean climbDrop = droppedOthers.isChecked();
+        boolean damDrive = damagedDrivetrain.isChecked();
+        boolean damIntake = damagedIntake.isChecked();
+        boolean def = playedDefense.isChecked();
+
+        String data = extras.getString("DATA");
+        String match = extras.getString("MATCH");
+        String team = extras.getString("TEAM");
+        boolean aCross = extras.getBoolean("AUTO_CROSS");
+        boolean aSwitch = extras.getBoolean("AUTO_SWITCH");
+        boolean aScale = extras.getBoolean("AUTO_SCALE");
+        boolean aPickup = extras.getBoolean("AUTO_PICKUP");
+
+        data += match + "," + team + "," + aCross + "," + aSwitch + "," + aScale + "," + aPickup;
+        data += null + ":" + null;
+        data += discard + "," + unusual + "," + climbFailed + "," + climbOthers + "," + climbDrop + "," + damDrive + "," + damIntake + "," + def;
+        data += "\n";
+
+        extras.putString("END", data);
 
         intent.putExtras(extras);
         startActivity(intent);
