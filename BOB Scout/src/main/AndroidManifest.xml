@@ -53,9 +53,10 @@
         <activity
             android:name=".ViewTeams"
             android:parentActivityName=".Start" />
-        <activity android:name=".ScoutMatchEnd">
+        <activity
+            android:name=".ScoutMatchEnd"
             android:screenOrientation="landscape"
-            android:parentActivityName=".ScoutMatch"
+            android:parentActivityName=".ScoutMatch">
         </activity>
         <activity android:name=".ScoutMatchClimb">
             android:screenOrientation="landscape"

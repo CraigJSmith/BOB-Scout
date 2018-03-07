@@ -177,21 +177,6 @@
                         android:layout_height="50dp"
                         android:layout_weight="1" />
 
-                    <ToggleButton
-                        android:id="@+id/climb_l"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_weight="1"
-                        android:background="#263238 "
-                        android:enabled="true"
-                        android:onClick="climb"
-                        android:tag="platform"
-                        android:text="Climb"
-                        android:textColor="#ffffff"
-                        android:textOff="Climb"
-                        android:textOn="Climb" />
-
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
@@ -340,7 +325,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="1dp"
                         android:layout_weight="1"
-                        android:background="@drawable/greenscoutbutton"
+                        android:background="@drawable/fpickupbutton"
                         android:enabled="true"
                         android:onClick="addAction"
                         android:tag="fpickup"
@@ -532,21 +517,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1" />
-
-                    <ToggleButton
-                        android:id="@+id/climb_r"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="20dp"
-                        android:layout_weight="1"
-                        android:background="#263238 "
-                        android:enabled="true"
-                        android:onClick="climb"
-                        android:tag="platform"
-                        android:text="Climb"
-                        android:textColor="#ffffff"
-                        android:textOff="Climb"
-                        android:textOn="Climb" />
 
                     <Space
                         android:layout_width="match_parent"

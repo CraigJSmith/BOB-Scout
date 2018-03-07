@@ -8,102 +8,139 @@
     tools:layout_editor_absoluteY="89dp">
 
     <ToggleButton
-        android:id="@+id/failedClimb"
+        android:id="@+id/damagedLift"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Failed Climb"
-        android:textOff="Failed Climb"
-        android:textOn="Failed Climb"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="321dp" />
+        android:layout_marginStart="16dp"
+        android:text="Damaged Lift"
+        android:textOff="Damaged Lift"
+        android:textOn="Damaged Lift"
+        app:layout_constraintStart_toEndOf="@+id/damagedIntake"
+        app:layout_constraintTop_toTopOf="@+id/damagedIntake" />
 
     <ToggleButton
-        android:id="@+id/climbedOthers"
+        android:id="@+id/sucessfulClimb"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Climbed Others"
-        android:textOff="Climbed Others"
-        android:textOn="Climbed Others"
-        tools:layout_editor_absoluteX="481dp"
-        tools:layout_editor_absoluteY="154dp" />
+        android:layout_marginEnd="8dp"
+        android:tag="sucessfulClimb"
+        android:text="Sucessful Climb"
+        android:textOff="Sucessful Climb"
+        android:textOn="Sucessful Climb"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@+id/playedDefense" />
 
     <ToggleButton
-        android:id="@+id/failedClimb"
+        android:id="@+id/robotTipped"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Failed Climb"
-        android:textOff="Failed Climb"
-        android:textOn="Failed Climb"
-        tools:layout_editor_absoluteX="260dp"
-        tools:layout_editor_absoluteY="343dp" />
-
-    <ToggleButton
-        android:id="@+id/droppedOthers"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="Dropped Others"
-        android:textOff="Dropped Others"
-        android:textOn="Dropped Others"
-        tools:layout_editor_absoluteX="718dp"
-        tools:layout_editor_absoluteY="154dp" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:tag="tippedOver"
+        android:text="Robot Tipped Over"
+        android:textOff="Robot Tipped Over"
+        android:textOn="Robot Tipped Over"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/messedUp" />
 
     <ToggleButton
         android:id="@+id/damagedDrivetrain"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:text="Damaged Drivetrain"
         android:textOff="Damaged Drivetrain"
         android:textOn="Damaged Drivetrain"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="217dp" />
+        app:layout_constraintEnd_toStartOf="@+id/damagedIntake"
+        app:layout_constraintTop_toTopOf="@+id/damagedIntake" />
 
     <ToggleButton
         android:id="@+id/damagedIntake"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Damaged Intake"
         android:textOff="Damaged Intake"
         android:textOn="Damaged Intake"
-        tools:layout_editor_absoluteX="491dp"
-        tools:layout_editor_absoluteY="216dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unusualMatch" />
 
     <ToggleButton
         android:id="@+id/unusualMatch"
-        android:layout_width="293dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:text="Unusual Match"
         android:textOff="Unusual Match"
         android:textOn="Unusual Match"
-        tools:layout_editor_absoluteX="334dp"
-        tools:layout_editor_absoluteY="90dp" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/messedUp" />
 
     <ToggleButton
         android:id="@+id/messedUp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
         android:text="I messed up (Discard data)"
         android:textOff="I messed up (Discard data)"
         android:textOn="I messed up (Discard data)"
-        tools:layout_editor_absoluteX="330dp"
-        tools:layout_editor_absoluteY="21dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ToggleButton
         android:id="@+id/playedDefense"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:tag="playedDefense"
         android:text="Played Defense"
         android:textOff="Played Defense"
         android:textOn="Played Defense"
-        tools:layout_editor_absoluteX="380dp"
-        tools:layout_editor_absoluteY="283dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/damagedIntake" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:onClick="submit"
         android:text="Submit"
-        tools:layout_editor_absoluteX="436dp"
-        tools:layout_editor_absoluteY="399dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

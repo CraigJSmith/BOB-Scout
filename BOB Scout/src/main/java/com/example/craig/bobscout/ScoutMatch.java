@@ -47,7 +47,6 @@ public class ScoutMatch extends AppCompatActivity {
         cp_l = findViewById(R.id.cp_l);
 
         sw_l1 = findViewById(R.id.sw_l1);
-        climb_l = findViewById(R.id.climb_l);
         sw_l2 = findViewById(R.id.sw_l2);
 
         c_1 = findViewById(R.id.c_1);
@@ -65,7 +64,6 @@ public class ScoutMatch extends AppCompatActivity {
         c_6 = findViewById(R.id.c_6);
 
         sw_r1 = findViewById(R.id.sw_r1);
-        climb_r = findViewById(R.id.climb_r);
         sw_r2 = findViewById(R.id.sw_r2);
 
         cp_r = findViewById(R.id.cp_r);
@@ -153,15 +151,16 @@ public class ScoutMatch extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String match = extras.getString("MATCH");
         String team = extras.getString("TEAM");
+        String aStart = extras.getString("AUTO_START");
         boolean aCross = extras.getBoolean("AUTO_CROSS");
         boolean aSwitch = extras.getBoolean("AUTO_SWITCH");
         boolean aScale = extras.getBoolean("AUTO_SCALE");
         boolean aPickup = extras.getBoolean("AUTO_PICKUP");
 
         for (Action a : actions) {
-            data += match + "," + team + "," + aCross + "," + aSwitch + "," + aScale + "," + aPickup + ",";
-            data += a.getType() + "," + a.getTime();
-            data += "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null";
+            data += match + "," + team + "," + aStart + "," + aCross + "," + aSwitch + "," + aScale + "," + aPickup + ",";
+            data += a.getType() + "," + a.getTime() + ",";
+            data += "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null";
             data += "\n";
         }
     }

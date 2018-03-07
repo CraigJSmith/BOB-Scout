@@ -12,9 +12,9 @@ public class ScoutMatchEnd extends AppCompatActivity {
 
     private ToggleButton messedUp;
     private ToggleButton unusualMatch;
-    private ToggleButton failedClimb;
-    private ToggleButton climbedOthers;
-    private ToggleButton droppedOthers;
+    private ToggleButton robotTipped;
+    private ToggleButton sucessfulClimb;
+    private ToggleButton damagedLift;
     private ToggleButton damagedDrivetrain;
     private ToggleButton damagedIntake;
     private ToggleButton playedDefense;
@@ -26,11 +26,11 @@ public class ScoutMatchEnd extends AppCompatActivity {
 
         messedUp = findViewById(R.id.messedUp);
         unusualMatch = findViewById(R.id.unusualMatch);
-        failedClimb = findViewById(R.id.failedClimb);
-        climbedOthers = findViewById(R.id.climbedOthers);
-        droppedOthers = findViewById(R.id.droppedOthers);
+        robotTipped = findViewById(R.id.robotTipped);
         damagedDrivetrain = findViewById(R.id.damagedDrivetrain);
         damagedIntake = findViewById(R.id.damagedIntake);
+        damagedLift = findViewById(R.id.damagedLift);
+        sucessfulClimb = findViewById(R.id.sucessfulClimb);
         playedDefense = findViewById(R.id.playedDefense);
     }
 
@@ -40,24 +40,25 @@ public class ScoutMatchEnd extends AppCompatActivity {
 
         boolean discard = messedUp.isChecked();
         boolean unusual = unusualMatch.isChecked();
-        boolean climbFailed = failedClimb.isChecked();
-        boolean climbOthers = climbedOthers.isChecked();
-        boolean climbDrop = droppedOthers.isChecked();
+        boolean tipped = robotTipped.isChecked();
         boolean damDrive = damagedDrivetrain.isChecked();
         boolean damIntake = damagedIntake.isChecked();
+        boolean damLift = damagedLift.isChecked();
+        boolean climb = sucessfulClimb.isChecked();
         boolean def = playedDefense.isChecked();
 
         String data = extras.getString("DATA");
         String match = extras.getString("MATCH");
         String team = extras.getString("TEAM");
+        String aStart = extras.getString("AUTO_START");
         boolean aCross = extras.getBoolean("AUTO_CROSS");
         boolean aSwitch = extras.getBoolean("AUTO_SWITCH");
         boolean aScale = extras.getBoolean("AUTO_SCALE");
         boolean aPickup = extras.getBoolean("AUTO_PICKUP");
 
-        data += match + "," + team + "," + aCross + "," + aSwitch + "," + aScale + "," + aPickup;
-        data += null + ":" + null;
-        data += discard + "," + unusual + "," + climbFailed + "," + climbOthers + "," + climbDrop + "," + damDrive + "," + damIntake + "," + def;
+        data += match + "," + team + "," + aStart + "," + aCross + "," + aSwitch + "," + aScale + "," + aPickup;
+        data += "," + null + "," + null + ",";
+        data += discard + "," + unusual + "," + tipped + "," + damDrive + "," + damIntake + "," + damLift + "," + climb + "," + def;
         data += "\n";
 
         extras.putString("END", data);

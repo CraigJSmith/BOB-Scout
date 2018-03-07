@@ -102,6 +102,7 @@ public class SubmitMatch extends AppCompatActivity {
             }
 
         }
+        //match, team, autoCross, autoSwitch, autoScale, autoPickup, action, time, discard, unusual, tipped, damDrive, damIntake, damLift, climb, def
         dataOutput.setText(output);
     }
 
