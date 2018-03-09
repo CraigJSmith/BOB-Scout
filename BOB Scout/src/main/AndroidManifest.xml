@@ -17,22 +17,27 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ScoutMatchSetup"
+            android:label="Match Setup"
             android:parentActivityName=".Start"
             android:screenOrientation="landscape" />
         <activity
             android:name=".ScoutMatch"
+            android:label="Teleop"
             android:parentActivityName=".ScoutMatchSetup"
             android:screenOrientation="landscape" />
         <activity
             android:name=".SubmitMatch"
+            android:label="Match Data Submit"
             android:parentActivityName=".ScoutMatchSetup"
             android:screenOrientation="landscape" />
         <activity
             android:name=".ScoutAuto"
+            android:label="Autonomous"
             android:parentActivityName=".ScoutMatchSetup"
             android:screenOrientation="landscape" />
         <activity
             android:name=".ViewMatches"
+            android:label="View Scouted Matches"
             android:parentActivityName=".Start" />
         <activity
             android:name=".Start"
@@ -56,7 +61,7 @@
         <activity
             android:name=".ScoutMatchEnd"
             android:screenOrientation="landscape"
-            android:parentActivityName=".ScoutMatch">
+            android:label="Match End">
         </activity>
         <activity android:name=".ScoutMatchClimb">
             android:screenOrientation="landscape"

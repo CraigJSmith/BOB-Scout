@@ -8,6 +8,19 @@
     tools:layout_editor_absoluteY="89dp">
 
 
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="300dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="startTeleop"
+        android:text="Start Teleop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/currentlyScouting"
         android:layout_width="510dp"
@@ -31,9 +44,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569">
+        app:layout_constraintVertical_bias="0.42000002">
 
         <ToggleButton
             android:id="@+id/autoCross"
@@ -79,20 +93,6 @@
             android:textOff="Pickup Cube"
             android:textOn="Pickup Cube" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
-
-        <Button
-            android:id="@+id/submit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="startTeleop"
-            android:text="Start Teleop" />
     </LinearLayout>
 
     <LinearLayout
@@ -104,7 +104,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.527">
+        app:layout_constraintVertical_bias="0.42000002">
 
         <TextView
             android:id="@+id/textView2"

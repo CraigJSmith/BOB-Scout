@@ -323,7 +323,7 @@
                     <ToggleButton
                         android:id="@+id/fpickup"
                         android:layout_width="wrap_content"
-                        android:layout_height="1dp"
+                        android:layout_height="20dp"
                         android:layout_weight="1"
                         android:background="@drawable/fpickupbutton"
                         android:enabled="true"
@@ -341,7 +341,7 @@
                     <ToggleButton
                         android:id="@+id/startstop"
                         android:layout_width="match_parent"
-                        android:layout_height="10dp"
+                        android:layout_height="1dp"
                         android:layout_weight="1"
                         android:background="#263238 "
                         android:enabled="true"
@@ -358,7 +358,7 @@
                     <ToggleButton
                         android:id="@+id/fdrop"
                         android:layout_width="wrap_content"
-                        android:layout_height="1dp"
+                        android:layout_height="20dp"
                         android:layout_weight="1"
                         android:background="@drawable/greenscoutbutton"
                         android:enabled="true"

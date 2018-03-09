@@ -33,7 +33,7 @@ public class ScoutAuto extends AppCompatActivity {
         autoStart = findViewById(R.id.autoStart);
 
         Bundle extras = getIntent().getExtras();
-        currentlyScouting.setText("You are scouting team " + extras.get("TEAM") + ", match " + extras.get("MATCH"));
+        currentlyScouting.setText("You are scouting Match " + extras.get("MATCH") + ", Team " + extras.get("TEAM"));
     }
 
     public void startTeleop(View v) {
