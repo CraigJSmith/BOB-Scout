@@ -67,6 +67,7 @@
             android:id="@+id/redLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:checked="true"
             android:text="Red Left, Blue Right" />

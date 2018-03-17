@@ -2,145 +2,292 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.craig.bobscout.ScoutMatchEnd"
     tools:layout_editor_absoluteY="89dp">
 
-    <ToggleButton
-        android:id="@+id/damagedLift"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Damaged Lift"
-        android:textOff="Damaged Lift"
-        android:textOn="Damaged Lift"
-        app:layout_constraintStart_toEndOf="@+id/damagedIntake"
-        app:layout_constraintTop_toTopOf="@+id/damagedIntake" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ToggleButton
-        android:id="@+id/sucessfulClimb"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:tag="sucessfulClimb"
-        android:text="Sucessful Climb"
-        android:textOff="Sucessful Climb"
-        android:textOn="Sucessful Climb"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/playedDefense" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginRight="200dp"
+            android:orientation="vertical">
 
-    <ToggleButton
-        android:id="@+id/robotTipped"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="16dp"
-        android:tag="tippedOver"
-        android:text="Robot Tipped Over"
-        android:textOff="Robot Tipped Over"
-        android:textOn="Robot Tipped Over"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/messedUp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
 
-    <ToggleButton
-        android:id="@+id/damagedDrivetrain"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Damaged Drivetrain"
-        android:textOff="Damaged Drivetrain"
-        android:textOn="Damaged Drivetrain"
-        app:layout_constraintEnd_toStartOf="@+id/damagedIntake"
-        app:layout_constraintTop_toTopOf="@+id/damagedIntake" />
+                <ToggleButton
+                    android:id="@+id/messedUp"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="I messed up (Discard data)"
+                    android:textOff="I messed up (Discard data)"
+                    android:textOn="I messed up (Discard data)"
+                    tools:layout_editor_absoluteX="331dp"
+                    tools:layout_editor_absoluteY="60dp" />
+            </LinearLayout>
 
-    <ToggleButton
-        android:id="@+id/damagedIntake"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Damaged Intake"
-        android:textOff="Damaged Intake"
-        android:textOn="Damaged Intake"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/unusualMatch" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
 
-    <ToggleButton
-        android:id="@+id/unusualMatch"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Unusual Match"
-        android:textOff="Unusual Match"
-        android:textOn="Unusual Match"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/messedUp" />
+                <ToggleButton
+                    android:id="@+id/unusualMatch"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Unusual Match"
+                    android:textOff="Unusual Match"
+                    android:textOn="Unusual Match"
+                    tools:layout_editor_absoluteX="268dp"
+                    tools:layout_editor_absoluteY="125dp" />
 
-    <ToggleButton
-        android:id="@+id/messedUp"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
-        android:text="I messed up (Discard data)"
-        android:textOff="I messed up (Discard data)"
-        android:textOn="I messed up (Discard data)"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <ToggleButton
+                    android:id="@+id/robotTipped"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="tippedOver"
+                    android:text="Robot Tipped Over"
+                    android:textOff="Robot Tipped Over"
+                    android:textOn="Robot Tipped Over"
+                    tools:layout_editor_absoluteX="494dp"
+                    tools:layout_editor_absoluteY="125dp" />
+            </LinearLayout>
 
-    <ToggleButton
-        android:id="@+id/playedDefense"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:tag="playedDefense"
-        android:text="Played Defense"
-        android:textOff="Played Defense"
-        android:textOn="Played Defense"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/damagedIntake" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75" />
+                <ToggleButton
+                    android:id="@+id/damagedDrivetrain"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Damaged Drive"
+                    android:textOff="Damaged Drive"
+                    android:textOn="Damaged Drive"
+                    tools:layout_editor_absoluteX="165dp"
+                    tools:layout_editor_absoluteY="187dp" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
+                <ToggleButton
+                    android:id="@+id/damagedIntake"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Damaged Intake"
+                    android:textOff="Damaged Intake"
+                    android:textOn="Damaged Intake"
+                    tools:layout_editor_absoluteX="381dp"
+                    tools:layout_editor_absoluteY="187dp" />
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+                <ToggleButton
+                    android:id="@+id/damagedLift"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Damaged Lift"
+                    android:textOff="Damaged Lift"
+                    android:textOn="Damaged Lift"
+                    tools:layout_editor_absoluteX="381dp"
+                    tools:layout_editor_absoluteY="187dp" />
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:onClick="submit"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <ToggleButton
+                    android:id="@+id/playedDefense"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="Defense Bot"
+                    android:text="Defense Bot"
+                    android:textOff="Defense Bot"
+                    android:textOn="Defense Bot"
+                    tools:layout_editor_absoluteX="489dp"
+                    tools:layout_editor_absoluteY="252dp" />
+
+                <ToggleButton
+                    android:id="@+id/pushBot"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:tag="playedDefense"
+                    android:text="Played Defense"
+                    android:textOff="Push bot"
+                    android:textOn="Push bot"
+                    tools:layout_editor_absoluteX="489dp"
+                    tools:layout_editor_absoluteY="252dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/climbSelf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/climbSelfText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Climbed self only"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:id="@+id/selfSucc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:onClick="climbRadioLogic"
+                            android:text="Successfully" />
+
+                        <RadioButton
+                            android:id="@+id/selfFail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="climbRadioLogic"
+                            android:text="Attempted, failed" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/climbSelfOther"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/climbSelfAndOtherText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Climbed Self and other"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:id="@+id/selfOtherSucc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:onClick="climbRadioLogic"
+                            android:text="Successfully" />
+
+                        <RadioButton
+                            android:id="@+id/selfOtherFail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="climbRadioLogic"
+                            android:text="Attempted, failed" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/climbOther"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/climbedByOther"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Climbed/lifted by another"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:id="@+id/otherSucc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:onClick="climbRadioLogic"
+                            android:text="Successfully" />
+
+                        <RadioButton
+                            android:id="@+id/otherFail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="climbRadioLogic"
+                            android:text="Attempted, failed" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="submit"
+                    android:text="Submit" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
