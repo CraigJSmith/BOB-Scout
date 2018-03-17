@@ -3,10 +3,12 @@ package com.example.craig.bobscout;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 import java.util.ArrayList;
@@ -16,12 +18,14 @@ public class ScoutMatch extends Activity {
     private String matchNum;
     private String teamNum;
     private static long startTime;
+    private long lastTime = 0;
     private String data;
     private boolean redLeft;
     private ArrayList<Action> actions;
     private ArrayList<View> buttons, buttonsLeft, buttonsRight;
     private View prevButton;
     private Button p_l1,ex_l,p_l2,cp_l,sw_l1,sw_l2,c_1,c_2,c_3,sc_1,fpickup,startstop,fdrop,sc_2,c_4,c_5,c_6,sw_r1,sw_r2,cp_r,p_r1,ex_r,p_r2,climb_l,climb_r;
+    private TextView timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,8 @@ public class ScoutMatch extends Activity {
         buttonsLeft = new ArrayList<View>();
         buttonsRight = new ArrayList<View>();
 
+        timer = findViewById(R.id.timer);
+
         p_l1 = findViewById(R.id.p_l1);
         ex_l = findViewById(R.id.ex_l);
         p_l2 = findViewById(R.id.p_l2);
@@ -56,7 +62,6 @@ public class ScoutMatch extends Activity {
 
         sc_1 = findViewById(R.id.sc_1);
         fpickup = findViewById(R.id.fpickup);
-        startstop = findViewById(R.id.startstop);
         fdrop = findViewById(R.id.fdrop);
         sc_2 = findViewById(R.id.sc_2);
 
@@ -96,6 +101,15 @@ public class ScoutMatch extends Activity {
         buttonsRight.add(p_r1);
         buttonsRight.add(ex_r);
         buttonsRight.add(p_r2);
+
+        final Handler handler=new Handler();
+        handler.post(new Runnable(){
+            @Override
+            public void run() {
+                timer.setText(Long.toString(System.currentTimeMillis() - lastTime));
+                handler.postDelayed(this,10);
+            }
+        });
 
         start();
     }
@@ -144,6 +158,7 @@ public class ScoutMatch extends Activity {
         prevButton = v;
 
         long time = System.currentTimeMillis() - startTime;
+        lastTime = System.currentTimeMillis();
         String action = v.getTag().toString();
         Action a = new Action(action, time);
         actions.add(a);
