@@ -21,14 +21,16 @@ public class SubmitMatch extends AppCompatActivity {
     private boolean autoCubeSwitch;
     private boolean autoCubeScale;
     private boolean autoCubePickup;
-    private boolean messedUp;
-    private boolean unusualMatch;
-    private boolean failedClimb;
-    private boolean climbedOthers;
-    private boolean droppedOthers;
-    private boolean damagedDrivetrain;
-    private boolean damagedIntake;
-    private boolean playedDefense;
+    private boolean discard;
+    private boolean unusual;
+    private boolean tipped;
+    private boolean damDrive;
+    private boolean damIntake;
+    private boolean damLift;
+    private boolean def;
+    private boolean push;
+    private boolean selfclimb;
+    private boolean otherclimb;
 
     private String matchNum;
     private String teamNum;
@@ -48,43 +50,32 @@ public class SubmitMatch extends AppCompatActivity {
         matchNum = extras.getString("MATCH");
         teamNum = extras.getString("TEAM");
 
+        // Teleop
+        String teleop = extras.getString("DATA");
+
         // Auto
+        String autoStart = extras.getString("AUTO_START");
         autoCross = extras.getBoolean("AUTO_CROSS");
         autoCubeSwitch = extras.getBoolean("AUTO_SWITCH");
         autoCubeScale = extras.getBoolean("AUTO_SCALE");
         autoCubePickup = extras.getBoolean("AUTO_PICKUP");
-
-        // Teleop
-        String teleop = extras.getString("DATA");
-        String climb = extras.getString("CLIMBDATA");
+        String auto = autoStart + "," + boolToInt(autoCross) + "," + boolToInt(autoCubeSwitch) + "," + boolToInt(autoCubeScale) + "," + boolToInt(autoCubePickup) + ",";
 
         // End
-        messedUp = extras.getBoolean("MESSED_UP");
-        unusualMatch = extras.getBoolean("UNUSUAL_MATCH");
-        failedClimb = extras.getBoolean("FAILED_CLIMB");
-        climbedOthers = extras.getBoolean("CLIMBED_OTHERS");
-        droppedOthers = extras.getBoolean("DROPPED_OTHERS");
-        damagedDrivetrain = extras.getBoolean("DAMAGED_DRIVETRAIN");
-        damagedIntake = extras.getBoolean("DAMAGED_INTAKE");
-        playedDefense = extras.getBoolean("PLAYED_DEFENSE");
+        discard = extras.getBoolean("DISCARD");
+        unusual = extras.getBoolean("UNUSUAL");
+        tipped = extras.getBoolean("TIPPED");
+        damDrive = extras.getBoolean("DAMDRIVE");
+        damIntake = extras.getBoolean("DAMINTAKE");
+        damLift = extras.getBoolean("DAMLIFT");
+        def = extras.getBoolean("DEF");
+        push = extras.getBoolean("PUSH");
+        selfclimb = extras.getBoolean("SELFCLIMB");
+        otherclimb = extras.getBoolean("OTHERCLIMB");
+        String end = boolToInt(discard) + "," + boolToInt(unusual) + "," + boolToInt(tipped) + "," + boolToInt(damDrive) + "," + boolToInt(damIntake) + "," +
+                     boolToInt(damLift) + "," + boolToInt(def) + "," + boolToInt(push) + "," + boolToInt(selfclimb) + "," + boolToInt(otherclimb) + ",";
 
-        String discard = String.valueOf(messedUp) + "\n";
-
-        String setup = matchNum + "@" + teamNum + "\n";
-
-        String auto = String.valueOf(autoCross) + "," +
-                      String.valueOf(autoCubeSwitch) + "," +
-                      String.valueOf(autoCubeScale) + "," +
-                      String.valueOf(autoCubePickup) + "\n";
-
-        String end = extras.getString("END");
-
-        output = teleop + end;
-       //output = discard + setup + auto + end + teleop + climb;
-
-//        if(!climb.equals(null) && !climb.equals("")) {
-//            output += climb;
-//        }
+        output = teleop + matchNum + "," + teamNum + "," + "," + "," + auto + end;
 
         if(Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
             File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/Matches/");
@@ -110,5 +101,13 @@ public class SubmitMatch extends AppCompatActivity {
     public void onBackPressed() {
         Intent newMatch = new Intent(this, ScoutMatchSetup.class);
         startActivity(newMatch);
+    }
+
+    private int boolToInt(boolean b) {
+        if(b == true) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

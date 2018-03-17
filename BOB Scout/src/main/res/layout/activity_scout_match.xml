@@ -322,7 +322,7 @@
 
                     <ToggleButton
                         android:id="@+id/fpickup"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:layout_weight="1"
                         android:background="@drawable/fpickupbutton"
@@ -346,6 +346,7 @@
                         android:background="#263238 "
                         android:enabled="true"
                         android:onClick="stop"
+                        android:tag="stop"
                         android:textColor="@android:color/white"
                         android:textOff="Stop"
                         android:textOn="Stop" />
@@ -357,7 +358,7 @@
 
                     <ToggleButton
                         android:id="@+id/fdrop"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="20dp"
                         android:layout_weight="1"
                         android:background="@drawable/greenscoutbutton"

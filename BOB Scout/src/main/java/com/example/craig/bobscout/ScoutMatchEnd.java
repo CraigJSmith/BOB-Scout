@@ -61,23 +61,9 @@ public class ScoutMatchEnd extends AppCompatActivity {
         String data = extras.getString("DATA");
         String match = extras.getString("MATCH");
         String team = extras.getString("TEAM");
-        String aStart = extras.getString("AUTO_START");
-        boolean aCross = extras.getBoolean("AUTO_CROSS");
-        boolean aSwitch = extras.getBoolean("AUTO_SWITCH");
-        boolean aScale = extras.getBoolean("AUTO_SCALE");
-        boolean aPickup = extras.getBoolean("AUTO_PICKUP");
 
-        boolean discard = messedUp.isChecked();
-        boolean unusual = unusualMatch.isChecked();
-        boolean tipped = robotTipped.isChecked();
-        boolean damDrive = damagedDrivetrain.isChecked();
-        boolean damIntake = damagedIntake.isChecked();
-        boolean damLift = damagedLift.isChecked();
-        boolean def = playedDefense.isChecked();
-        boolean push = pushBot.isChecked();
         boolean selfClimb = false;
         boolean otherClimb = false;
-
         if(climbSelf.getCheckedRadioButtonId() == selfSucc.getId()) {
             selfClimb = true;
         } else if(climbSelfOther.getCheckedRadioButtonId() == selfOtherSucc.getId()) {
@@ -87,12 +73,16 @@ public class ScoutMatchEnd extends AppCompatActivity {
             selfClimb = true;
         }
 
-        data += match + "," + team + "," + aStart + "," + aCross + "," + aSwitch + "," + aScale + "," + aPickup;
-        data += "," + null + "," + null + ",";
-        data += discard + "," + unusual + "," + tipped + "," + damDrive + "," + damIntake + "," + damLift + "," + selfClimb + "," + otherClimb + "," + def + "," + push;
-        data += "\n";
-
-        extras.putString("END", data);
+        extras.putBoolean("DISCARD", messedUp.isChecked());
+        extras.putBoolean("UNUSUAL", unusualMatch.isChecked());
+        extras.putBoolean("TIPPED", robotTipped.isChecked());
+        extras.putBoolean("DAMDRIVE", damagedDrivetrain.isChecked());
+        extras.putBoolean("DAMINTAKE", damagedIntake.isChecked());
+        extras.putBoolean("DAMLIFT", damagedLift.isChecked());
+        extras.putBoolean("DEF", playedDefense.isChecked());
+        extras.putBoolean("PUSH", pushBot.isChecked());
+        extras.putBoolean("SELFCLIMB", selfClimb);
+        extras.putBoolean("OTHERCLIMB", otherClimb);
 
         intent.putExtras(extras);
         startActivity(intent);

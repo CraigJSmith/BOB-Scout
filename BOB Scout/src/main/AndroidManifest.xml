@@ -23,6 +23,7 @@
         <activity
             android:name=".ScoutMatch"
             android:label="Teleop"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
             android:parentActivityName=".ScoutMatchSetup"
             android:screenOrientation="landscape" />
         <activity

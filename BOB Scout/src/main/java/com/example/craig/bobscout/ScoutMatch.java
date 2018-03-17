@@ -1,5 +1,6 @@
 package com.example.craig.bobscout;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,7 @@ import android.widget.ToggleButton;
 
 import java.util.ArrayList;
 
-public class ScoutMatch extends AppCompatActivity {
+public class ScoutMatch extends Activity {
 
     private String matchNum;
     private String teamNum;
@@ -105,6 +106,7 @@ public class ScoutMatch extends AppCompatActivity {
     }
 
     public void stop(View v) {
+        addAction(v);
         saveData();
 
         Intent intent = new Intent(this, ScoutMatchEnd.class);
@@ -151,16 +153,10 @@ public class ScoutMatch extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String match = extras.getString("MATCH");
         String team = extras.getString("TEAM");
-        String aStart = extras.getString("AUTO_START");
-        boolean aCross = extras.getBoolean("AUTO_CROSS");
-        boolean aSwitch = extras.getBoolean("AUTO_SWITCH");
-        boolean aScale = extras.getBoolean("AUTO_SCALE");
-        boolean aPickup = extras.getBoolean("AUTO_PICKUP");
 
         for (Action a : actions) {
-            data += match + "," + team + "," + aStart + "," + aCross + "," + aSwitch + "," + aScale + "," + aPickup + ",";
+            data += match + "," + team + ",";
             data += a.getType() + "," + a.getTime() + ",";
-            data += "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null" + "," + "null";
             data += "\n";
         }
     }
