@@ -2,6 +2,7 @@ package com.example.craig.bobscout;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class ScoutMatch extends Activity {
@@ -18,13 +22,13 @@ public class ScoutMatch extends Activity {
     private String matchNum;
     private String teamNum;
     private static long startTime;
-    private long lastTime = 0;
+    private long lastTime;
     private String data;
     private boolean redLeft;
     private ArrayList<Action> actions;
     private ArrayList<View> buttons, buttonsLeft, buttonsRight;
+    private Button p_l1,ex_l,p_l2,cp_l,sw_l1,sw_l2,c_1,c_2,c_3,sc_1,fpickup,fdrop,sc_2,c_4,c_5,c_6,sw_r1,sw_r2,cp_r,p_r1,ex_r,p_r2,climb_l,climb_r;
     private View prevButton;
-    private Button p_l1,ex_l,p_l2,cp_l,sw_l1,sw_l2,c_1,c_2,c_3,sc_1,fpickup,startstop,fdrop,sc_2,c_4,c_5,c_6,sw_r1,sw_r2,cp_r,p_r1,ex_r,p_r2,climb_l,climb_r;
     private TextView timer;
 
     @Override
@@ -46,6 +50,7 @@ public class ScoutMatch extends Activity {
         buttonsRight = new ArrayList<View>();
 
         timer = findViewById(R.id.timer);
+        lastTime = System.currentTimeMillis();
 
         p_l1 = findViewById(R.id.p_l1);
         ex_l = findViewById(R.id.ex_l);
@@ -89,7 +94,6 @@ public class ScoutMatch extends Activity {
         buttons.add(c_3);
         buttons.add(sc_1);
         buttons.add(fpickup);
-        buttons.add(startstop);
         buttons.add(fdrop);
         buttons.add(sc_2);
         buttons.add(c_4);
@@ -106,12 +110,35 @@ public class ScoutMatch extends Activity {
         handler.post(new Runnable(){
             @Override
             public void run() {
-                timer.setText(Long.toString(System.currentTimeMillis() - lastTime));
-                handler.postDelayed(this,10);
+                double time = (((double)System.currentTimeMillis() - lastTime)/1000);
+                BigDecimal cut = new BigDecimal(time);
+                BigDecimal floored = cut.setScale(1, BigDecimal.ROUND_DOWN);
+
+                timer.setText("Time: " + floored.toString());
+
+                ToggleButton b = (ToggleButton) prevButton;
+                if (b != null && b.isChecked()) {
+                    timer.setTextColor(getResources().getColor(R.color.lime));
+                } else {
+                    timer.setTextColor(Color.WHITE);
+                }
+
+                handler.postDelayed(this,100);
             }
         });
 
         start();
+    }
+
+    @Override
+    protected void onResume()
+    {
+        if(!actions.isEmpty()) {
+            actions.remove(actions.size()-1); // to remove the 'stop' action
+        }
+        data = "";
+        prevButton = null;
+        super.onResume();
     }
 
     public void start() {
@@ -158,7 +185,6 @@ public class ScoutMatch extends Activity {
         prevButton = v;
 
         long time = System.currentTimeMillis() - startTime;
-        lastTime = System.currentTimeMillis();
         String action = v.getTag().toString();
         Action a = new Action(action, time);
         actions.add(a);

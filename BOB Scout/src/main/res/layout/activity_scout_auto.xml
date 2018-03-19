@@ -112,6 +112,10 @@
             android:layout_height="wrap_content"
             android:text="Auto Start Position (relative to driver)" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
         <RadioGroup
             android:id="@+id/autoStart"
             android:layout_width="match_parent"

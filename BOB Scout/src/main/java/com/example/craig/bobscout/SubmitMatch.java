@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -97,10 +98,14 @@ public class SubmitMatch extends AppCompatActivity {
         dataOutput.setText(output);
     }
 
-    @Override
-    public void onBackPressed() {
+    public void back(View v) {
         Intent newMatch = new Intent(this, ScoutMatchSetup.class);
         startActivity(newMatch);
+    }
+
+    @Override
+    public void onBackPressed() {
+        back(null);
     }
 
     private int boolToInt(boolean b) {

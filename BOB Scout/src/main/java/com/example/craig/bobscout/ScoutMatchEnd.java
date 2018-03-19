@@ -1,9 +1,13 @@
 package com.example.craig.bobscout;
 
+import android.app.ActionBar;
+import android.app.Fragment;
 import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RadioButton;
@@ -35,6 +39,7 @@ public class ScoutMatchEnd extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scout_match_end);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         messedUp = findViewById(R.id.messedUp);
         unusualMatch = findViewById(R.id.unusualMatch);
@@ -53,6 +58,17 @@ public class ScoutMatchEnd extends AppCompatActivity {
         selfOtherFail = findViewById(R.id.selfOtherFail);
         otherSucc = findViewById(R.id.otherSucc);
         otherFail = findViewById(R.id.otherFail);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void submit(View v) {
@@ -100,6 +116,4 @@ public class ScoutMatchEnd extends AppCompatActivity {
             climbSelfOther.clearCheck();
         }
     }
-
-
 }

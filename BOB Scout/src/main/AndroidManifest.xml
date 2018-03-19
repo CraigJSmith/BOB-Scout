@@ -45,7 +45,6 @@
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -64,9 +63,9 @@
             android:screenOrientation="landscape"
             android:label="Match End">
         </activity>
-        <activity android:name=".ScoutMatchClimb">
+        <activity android:name=".ScoutMatchClimb"
             android:screenOrientation="landscape"
-            android:parentActivityName=".ScoutMatch"
+            android:parentActivityName=".ScoutMatch">
         </activity>
     </application>
 

@@ -3,6 +3,7 @@ package com.example.craig.bobscout;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,7 +34,9 @@ public class ScoutAuto extends AppCompatActivity {
         autoStart = findViewById(R.id.autoStart);
 
         Bundle extras = getIntent().getExtras();
-        currentlyScouting.setText("You are scouting Match " + extras.get("MATCH") + ", Team " + extras.get("TEAM"));
+        currentlyScouting.setText(Html.fromHtml("You are scouting Team "
+                                                + "<font color=\"#009dff\">" + extras.get("TEAM") + "</font>"
+                                                + " (Match " + extras.get("MATCH") + ")"));
     }
 
     public void startTeleop(View v) {
