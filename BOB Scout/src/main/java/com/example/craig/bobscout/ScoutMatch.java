@@ -182,7 +182,12 @@ public class ScoutMatch extends Activity {
         if(!v.equals(prevButton) && prevButton != null) {
             ((ToggleButton)prevButton).setChecked(false);
         }
-        prevButton = v;
+
+        if(v.getTag().equals("fdrop")) {
+            prevButton = null;
+        } else {
+            prevButton = v;
+        }
 
         long time = System.currentTimeMillis() - startTime;
         String action = v.getTag().toString();
