@@ -6,53 +6,80 @@
     android:layout_height="match_parent"
     tools:context="com.example.craig.bobscout.Start">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="250px"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="271dp"
-        android:onClick="scoutTeam"
-        android:text="Scout Teams"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:paddingLeft="200dp"
+        android:paddingRight="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="250px"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="37dp"
-        android:layout_marginStart="254dp"
-        android:onClick="viewMatches"
-        android:text="View Matches"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="250px"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="271dp"
-        android:layout_marginTop="33dp"
-        android:onClick="viewTeams"
-        android:text="View Teams"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+            <Button
+                android:id="@+id/scoutMatch"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="scoutMatch"
+                android:text="Scout Match"
+                app:layout_constraintEnd_toStartOf="@+id/scoutTeam"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="250px"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="37dp"
-        android:layout_marginStart="254dp"
-        android:layout_marginTop="160dp"
-        android:onClick="scoutMatch"
-        android:text="Scout Match"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/scoutTeam"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="scoutTeam"
+                android:text="Scout Teams"
+                app:layout_constraintBaseline_toBaselineOf="@+id/scoutMatch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/scoutMatch" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
+
+            <Button
+                android:id="@+id/viewMatches"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="viewMatches"
+                android:text="View Matches"
+                app:layout_constraintEnd_toStartOf="@+id/scoutTeam"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/viewTeams"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="viewTeams"
+                android:text="View Teams"
+                app:layout_constraintBaseline_toBaselineOf="@+id/scoutMatch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/scoutMatch" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView4"
@@ -61,7 +88,7 @@
         android:layout_marginBottom="28dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Version 2.0"
+        android:text="Version 2.01"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
