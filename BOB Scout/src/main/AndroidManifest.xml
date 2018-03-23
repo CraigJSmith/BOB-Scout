@@ -23,9 +23,9 @@
         <activity
             android:name=".ScoutMatch"
             android:label="Teleop"
-            android:theme="@android:style/Theme.Light.NoTitleBar"
             android:parentActivityName=".ScoutMatchSetup"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name=".SubmitMatch"
             android:label="Match Data Submit"
@@ -45,6 +45,7 @@
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -60,13 +61,13 @@
             android:parentActivityName=".Start" />
         <activity
             android:name=".ScoutMatchEnd"
-            android:screenOrientation="landscape"
-            android:label="Match End">
-        </activity>
-        <activity android:name=".ScoutMatchClimb"
-            android:screenOrientation="landscape"
-            android:parentActivityName=".ScoutMatch">
-        </activity>
+            android:label="Match End"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ScoutMatchClimb"
+            android:parentActivityName=".ScoutMatch"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Settings"></activity>
     </application>
 
 </manifest>

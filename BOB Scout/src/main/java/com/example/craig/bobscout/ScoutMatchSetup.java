@@ -19,6 +19,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class ScoutMatchSetup extends AppCompatActivity {
 
@@ -30,7 +31,8 @@ public class ScoutMatchSetup extends AppCompatActivity {
     private RadioButton redRightBlueLeft;
     private String matchNum;
     private String teamNum;
-    private String[] matches;
+    private HashMap<String, HashMap<String, String>> schedule;
+    private String allianceToScout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +51,8 @@ public class ScoutMatchSetup extends AppCompatActivity {
         matchNumBox.setText(String.valueOf(sharedPref.getInt("match", 1)));
         matchNum = matchNumBox.getText().toString();
 
-        File schedule = new File(Environment.getExternalStorageDirectory(), "/BOBScout/schedule.txt");
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(schedule));
-            String line = br.readLine();
-            matches = line.split(",");
-            teamNumBox.setText(matches[(Integer.valueOf(matchNum) - 1)]);
-        } catch (Exception e) {
-            teamNumBox.setText("");
-        }
-
+        allianceToScout = sharedPref.getString("allianceToScout", "");
+        readCSV();
         populateTeam(null);
 
         if (!sharedPref.getBoolean("redLeft", true)) {
@@ -69,27 +63,9 @@ public class ScoutMatchSetup extends AppCompatActivity {
             redRightBlueLeft.setChecked(false);
         }
 
-        teamNumBox.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //populateTeam(null);
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //populateTeam(null);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                //populateTeam(null);
-            }
-        });
-
         matchNumBox.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-               // populateTeam(null);
             }
 
             @Override
@@ -99,9 +75,16 @@ public class ScoutMatchSetup extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                //populateTeam(null);
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        allianceToScout = sharedPref.getString("allianceToScout", "");
+        readCSV();
+        populateTeam(null);
     }
 
     public void submit(View v) {
@@ -171,21 +154,47 @@ public class ScoutMatchSetup extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void settings(View v) {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+
     public void populateTeam(View v) {
         String match = matchNumBox.getText().toString();
-        try {
-            if (matches.length < Integer.parseInt(match)) {
-                teamNum = "";
-            } else {
                 try {
-                    teamNum = matches[Integer.parseInt(match) - 1];
-                } catch (NumberFormatException e) {
-
+                    teamNum = schedule.get(match).get(allianceToScout);
+                } catch (Exception e) {
+                    teamNum = "";
                 }
+        teamNumBox.setText(teamNum);
+    }
+
+    public void readCSV() {
+        schedule = new HashMap<String, HashMap<String, String>>();
+        File file = new File(Environment.getExternalStorageDirectory(), "/BOBScout/schedule.csv");
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line = br.readLine();
+            line = br.readLine();
+
+            while(line != null) {
+                String[] p = line.split(",");
+                schedule.put(p[0], new HashMap<String, String>());
+                HashMap<String, String> matchMap = schedule.get(p[0]);
+                matchMap.put("red1", p[1]);
+                matchMap.put("red2", p[2]);
+                matchMap.put("red3", p[3]);
+                matchMap.put("blue1", p[4]);
+                matchMap.put("blue2", p[5]);
+                matchMap.put("blue3", p[6]);
+
+                line = br.readLine();
             }
-            teamNumBox.setText(teamNum);
-        } catch(NumberFormatException e) {
-            
+
+        } catch (Exception e) {
+            AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+            alertDialog.setTitle("Error reading schedule");
+            alertDialog.setMessage("error");
         }
     }
 }
