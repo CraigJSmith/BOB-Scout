@@ -1,7 +1,9 @@
 package com.example.craig.bobscout;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
@@ -36,15 +38,16 @@ public class ScoutMatch extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scout_match);
 
+        SharedPreferences sharedPref = this.getSharedPreferences("BOBScout_prefs", Context.MODE_PRIVATE);
+
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         matchNum = extras.getString("MATCH");
         teamNum = extras.getString("TEAM");
-        redLeft = extras.getBoolean("REDLEFT");
+        redLeft = sharedPref.getBoolean("redLeft", true);
         startTime = System.currentTimeMillis();
         data = "";
         actions = new ArrayList<Action>();
-
         buttons = new ArrayList<View>();
         buttonsLeft = new ArrayList<View>();
         buttonsRight = new ArrayList<View>();
