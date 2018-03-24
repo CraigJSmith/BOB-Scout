@@ -67,7 +67,12 @@
             android:name=".ScoutMatchClimb"
             android:parentActivityName=".ScoutMatch"
             android:screenOrientation="landscape" />
-        <activity android:name=".Settings"></activity>
+        <activity
+            android:name=".Settings"
+            android:label="Settings"
+            android:parentActivityName=".ScoutMatchSetup"
+            android:screenOrientation="landscape"
+            />
     </application>
 
 </manifest>
