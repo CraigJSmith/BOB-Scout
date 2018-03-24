@@ -11,6 +11,9 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -85,6 +88,24 @@ public class ScoutMatchSetup extends AppCompatActivity {
         allianceToScout = sharedPref.getString("allianceToScout", "");
         readCSV();
         populateTeam(null);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.matchsetupmenu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                Intent intent = new Intent(this, Settings.class);
+                startActivity(intent);
+                break;
+        }
+        return true;
     }
 
     public void submit(View v) {

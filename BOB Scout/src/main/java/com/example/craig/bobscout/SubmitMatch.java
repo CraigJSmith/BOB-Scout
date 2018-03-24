@@ -76,7 +76,7 @@ public class SubmitMatch extends AppCompatActivity {
         selfclimb = extras.getBoolean("SELFCLIMB");
         otherclimb = extras.getBoolean("OTHERCLIMB");
         String end = boolToInt(discard) + "," + boolToInt(unusual) + "," + boolToInt(tipped) + "," + boolToInt(damDrive) + "," + boolToInt(damIntake) + "," +
-                     boolToInt(damLift) + "," + boolToInt(def) + "," + boolToInt(push) + "," + boolToInt(selfclimb) + "," + boolToInt(otherclimb) + ",";
+                     boolToInt(damLift) + "," + boolToInt(def) + "," + boolToInt(push) + "," + boolToInt(selfclimb) + "," + boolToInt(otherclimb);
 
         output = teleop + matchNum + "," + teamNum + "," + "," + "," + auto + end;
 
