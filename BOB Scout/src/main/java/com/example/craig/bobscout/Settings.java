@@ -22,6 +22,8 @@ public class Settings extends AppCompatActivity {
     private RadioButton blue2;
     private RadioButton blue3;
     private String allianceToScout;
+    private RadioButton redLeftBlueRight;
+    private RadioButton redRightBlueLeft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ public class Settings extends AppCompatActivity {
         blue1 = findViewById(R.id.blue1);
         blue2 = findViewById(R.id.blue2);
         blue3 = findViewById(R.id.blue3);
+        redLeftBlueRight = findViewById(R.id.redLeft);
+        redRightBlueLeft = findViewById(R.id.redRight);
 
        allianceToScout = sharedPref.getString("allianceToScout", "");
 
@@ -54,6 +58,15 @@ public class Settings extends AppCompatActivity {
         } else if(allianceToScout.equals("blue3")) {
             blue3.setChecked(true);
         }
+
+        if (!sharedPref.getBoolean("redLeft", true)) {
+            redLeftBlueRight.setChecked(false);
+            redRightBlueLeft.setChecked(true);
+        } else {
+            redLeftBlueRight.setChecked(true);
+            redRightBlueLeft.setChecked(false);
+        }
+
     }
 
     @Override
@@ -86,6 +99,14 @@ public class Settings extends AppCompatActivity {
         } else if(id == blue3.getId()) {
             editor.putString("allianceToScout", "blue3");
         }
+
+        try {
+            RadioButton redLeft = findViewById(R.id.redLeft);
+            editor.putBoolean("redLeft", redLeft.isChecked());
+        } catch (NullPointerException e) {
+            editor.putBoolean("redLeft", true);
+        }
+
         editor.apply();
 
         Intent intent = new Intent(this, ScoutMatchSetup.class);

@@ -14,7 +14,6 @@
         android:layout_marginBottom="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Match Number"
         android:inputType="number"
         android:singleLine="true"
         app:layout_constraintBottom_toTopOf="@+id/teamNumBox"
@@ -29,7 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="39dp"
         android:ems="10"
-        android:hint="Team Number"
         android:inputType="number"
         android:singleLine="true"
         app:layout_constraintStart_toStartOf="@+id/matchNumBox"
@@ -49,35 +47,30 @@
         app:layout_constraintStart_toEndOf="@+id/teamNumBox"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioGroup
-        android:id="@+id/allianceSides"
+    <TextView
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Match"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/matchNumBox"
+        app:layout_constraintEnd_toStartOf="@+id/matchNumBox"
+        app:layout_constraintTop_toTopOf="@+id/matchNumBox" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Team"
+        android:textSize="18sphbgh"
         app:layout_constraintBottom_toBottomOf="@+id/teamNumBox"
         app:layout_constraintEnd_toStartOf="@+id/teamNumBox"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/matchNumBox">
-
-        <RadioButton
-            android:id="@+id/redLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:checked="false"
-            android:text="Red Left, Blue Right" />
-
-        <RadioButton
-            android:id="@+id/redRight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Blue Left, Red Right" />
-    </RadioGroup>
+        app:layout_constraintTop_toTopOf="@+id/teamNumBox" />
 
 </android.support.constraint.ConstraintLayout>

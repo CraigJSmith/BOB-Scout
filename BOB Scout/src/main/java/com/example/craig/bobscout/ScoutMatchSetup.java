@@ -30,8 +30,6 @@ public class ScoutMatchSetup extends AppCompatActivity {
     SharedPreferences.Editor editor;
     private EditText matchNumBox;
     private EditText teamNumBox;
-    private RadioButton redLeftBlueRight;
-    private RadioButton redRightBlueLeft;
     private String matchNum;
     private String teamNum;
     private HashMap<String, HashMap<String, String>> schedule;
@@ -48,23 +46,12 @@ public class ScoutMatchSetup extends AppCompatActivity {
         matchNumBox = findViewById(R.id.matchNumBox);
         teamNumBox = findViewById(R.id.teamNumBox);
 
-        redLeftBlueRight = findViewById(R.id.redLeft);
-        redRightBlueLeft = findViewById(R.id.redRight);
-
         matchNumBox.setText(String.valueOf(sharedPref.getInt("match", 1)));
         matchNum = matchNumBox.getText().toString();
 
         allianceToScout = sharedPref.getString("allianceToScout", "");
         readCSV();
         populateTeam(null);
-
-        if (!sharedPref.getBoolean("redLeft", true)) {
-            redLeftBlueRight.setChecked(false);
-            redRightBlueLeft.setChecked(true);
-        } else {
-            redLeftBlueRight.setChecked(true);
-            redRightBlueLeft.setChecked(false);
-        }
 
         matchNumBox.addTextChangedListener(new TextWatcher() {
             @Override
@@ -158,25 +145,12 @@ public class ScoutMatchSetup extends AppCompatActivity {
         extras.putString("MATCH", matchNum);
         extras.putString("TEAM", teamNum);
 
-        try {
-            RadioButton redLeft = findViewById(R.id.redLeft);
-            editor.putBoolean("redLeft", redLeft.isChecked());
-        } catch (NullPointerException e) {
-            editor.putBoolean("redLeft", true);
-        }
-        editor.apply();
-
         intent.putExtras(extras);
         startActivity(intent);
     }
 
     public void viewMatches(View v) {
         Intent intent = new Intent(this, ViewMatches.class);
-        startActivity(intent);
-    }
-
-    public void settings(View v) {
-        Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
     }
 
