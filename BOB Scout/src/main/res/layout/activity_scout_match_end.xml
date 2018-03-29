@@ -156,46 +156,6 @@
                     android:orientation="vertical">
 
                     <RadioGroup
-                        android:id="@+id/climbSelf"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <TextView
-                            android:id="@+id/climbSelfText"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Climbed self only"
-                            android:textAlignment="textStart" />
-
-                        <RadioButton
-                            android:id="@+id/selfSucc"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="1"
-                            android:onClick="climbRadioLogic"
-                            android:text="Successfully" />
-
-                        <RadioButton
-                            android:id="@+id/selfFail"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:onClick="climbRadioLogic"
-                            android:text="Attempted, failed" />
-                    </RadioGroup>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <RadioGroup
                         android:id="@+id/climbSelfOther"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -220,6 +180,46 @@
 
                         <RadioButton
                             android:id="@+id/selfOtherFail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:onClick="climbRadioLogic"
+                            android:text="Attempted, failed" />
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/climbSelf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/climbSelfText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Climbed self only"
+                            android:textAlignment="textStart" />
+
+                        <RadioButton
+                            android:id="@+id/selfSucc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:onClick="climbRadioLogic"
+                            android:text="Successfully" />
+
+                        <RadioButton
+                            android:id="@+id/selfFail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -281,9 +281,30 @@
                     android:id="@+id/submit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
                     android:layout_weight="1"
                     android:onClick="submit"
                     android:text="Submit" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:paddingLeft="200dp"
+                android:paddingRight="200dp"
+                android:paddingTop="10dp">
+
+                <Button
+                    android:id="@+id/reset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="reset"
+                    android:text="Reset" />
             </LinearLayout>
 
         </LinearLayout>

@@ -104,6 +104,20 @@ public class ScoutMatchEnd extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void reset(View v){
+        messedUp.setChecked(false);
+        unusualMatch.setChecked(false);
+        robotTipped.setChecked(false);
+        damagedLift.setChecked(false);
+        damagedDrivetrain.setChecked(false);
+        damagedIntake.setChecked(false);
+        playedDefense.setChecked(false);
+        pushBot.setChecked(false);
+        climbSelf.clearCheck();
+        climbSelfOther.clearCheck();
+        climbOther.clearCheck();
+    }
+
     public void climbRadioLogic(View v){
         if (climbSelf.getCheckedRadioButtonId() == v.getId()) {
             climbSelfOther.clearCheck();
