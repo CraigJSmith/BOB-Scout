@@ -70,7 +70,7 @@
         <activity
             android:name=".Settings"
             android:label="Settings"
-            android:parentActivityName=".ScoutMatchSetup"
+            android:parentActivityName=".Start"
             android:screenOrientation="landscape"
             />
     </application>

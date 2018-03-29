@@ -77,24 +77,6 @@ public class ScoutMatchSetup extends AppCompatActivity {
         populateTeam(null);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.matchsetupmenu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.settings:
-                Intent intent = new Intent(this, Settings.class);
-                startActivity(intent);
-                break;
-        }
-        return true;
-    }
-
     public void submit(View v) {
         matchNum = matchNumBox.getText().toString();
         teamNum = teamNumBox.getText().toString();
