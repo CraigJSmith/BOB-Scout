@@ -81,6 +81,7 @@ public class ScoutMatchSetup extends AppCompatActivity {
         matchNum = matchNumBox.getText().toString();
         teamNum = teamNumBox.getText().toString();
         editor.putInt("match", Integer.parseInt(matchNum) + 1);
+        editor.apply();
 
         File dir = new File(Environment.getExternalStorageDirectory(), "/BOBScout/Matches/");
         File[] files = dir.listFiles();

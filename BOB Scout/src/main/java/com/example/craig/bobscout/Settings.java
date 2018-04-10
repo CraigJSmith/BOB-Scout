@@ -109,7 +109,7 @@ public class Settings extends AppCompatActivity {
 
         editor.apply();
 
-        Intent intent = new Intent(this, ScoutMatchSetup.class);
+        Intent intent = new Intent(this, Start.class);
         startActivity(intent);
     }
 }
