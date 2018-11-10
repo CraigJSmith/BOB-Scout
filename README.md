@@ -3,6 +3,8 @@ BOB Scout is an Android app allowing for the streamlined, user-friendly collecti
 
 This app is intended for use on Android tablets with screens 6.5" and greater. Smaller screen sizes may result in unpredictable UI behavior.
 
+**Demonstration:** https://youtu.be/XXyfIkk8tSw
+
 ## Usage
 
 ![Setup Screenshot](https://raw.githubusercontent.com/craigjsmith/BOB-Scout/master/screenshots/Setup.png)
